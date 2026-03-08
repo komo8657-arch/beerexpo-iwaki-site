@@ -70,67 +70,25 @@
                     style="font-size: 1.05rem; line-height: 1.8; color: var(--color-text); margin-bottom: 3rem; text-align: center;">
                     ビア博いわきに関するお問い合わせは<br>
                     以下のフォームよりご連絡ください。
-                </p>
+                <div
+                    style="background-color: var(--color-bg-sub); padding: var(--spacing-lg); border-radius: var(--radius-md); text-align: center; margin-bottom: 2rem;">
+                    <p style="margin-bottom: 1rem; color: var(--color-text);">
+                        現在、お問い合わせは専用のGoogleフォームにて受け付けております。<br>
+                        以下のフォームに入力いただくか、ボタンからフォームを開いて送信してください。
+                    </p>
+                    <a href="https://forms.google.com/" target="_blank" rel="noopener" class="btn btn-primary"
+                        style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+                        <span>📝</span> 専用フォームを開く
+                    </a>
+                </div>
 
-                <form id="contact-form" action="mailto:beerexpo.iwaki@gmail.com" method="post" enctype="text/plain"
-                    novalidate>
-
-                    <!-- お名前 -->
-                    <div class="form-group">
-                        <label class="form-label" for="name">
-                            お名前<span class="required-mark">※</span>
-                        </label>
-                        <input class="form-input" type="text" id="name" name="name" placeholder="例：山田 太郎" required
-                            autocomplete="name">
-                    </div>
-
-                    <!-- メールアドレス -->
-                    <div class="form-group">
-                        <label class="form-label" for="email">
-                            メールアドレス<span class="required-mark">※</span>
-                        </label>
-                        <input class="form-input" type="email" id="email" name="email" placeholder="例：example@mail.com"
-                            required autocomplete="email">
-                    </div>
-
-                    <!-- 電話番号 -->
-                    <div class="form-group">
-                        <label class="form-label" for="tel">電話番号</label>
-                        <input class="form-input" type="text" id="tel" name="tel" placeholder="例：0246-00-0000"
-                            autocomplete="tel">
-                    </div>
-
-                    <!-- 住所 -->
-                    <div class="form-group">
-                        <label class="form-label" for="address">住所</label>
-                        <input class="form-input" type="text" id="address" name="address"
-                            placeholder="例：福島県いわき市平○○町 0-0" autocomplete="street-address">
-                    </div>
-
-                    <!-- 本文・内容 -->
-                    <div class="form-group">
-                        <label class="form-label" for="message">
-                            本文・内容<span class="required-mark">※</span>
-                        </label>
-                        <textarea class="form-textarea" id="message" name="message" placeholder="お問い合わせ内容をご記入ください"
-                            required></textarea>
-                    </div>
-
-                    <!-- 送信確認チェック -->
-                    <div class="confirm-check-area">
-                        <input type="checkbox" id="confirm" name="confirm" required>
-                        <label for="confirm">上記送信内容を確認したらチェックを入れてください</label>
-                    </div>
-
-                    <!-- ボタン -->
-                    <div class="form-actions">
-                        <button type="submit" class="btn-submit">メールを送信する</button>
-                        <button type="reset" class="btn-reset">リセット</button>
-                    </div>
-
-                    <!-- 注意書き -->
-                    <p class="required-note">※は必須項目です。</p>
-                </form>
+                <!-- Googleフォーム埋め込み -->
+                <div class="google-form-container"
+                    style="width: 100%; height: 800px; max-width: 640px; margin: 0 auto; overflow: hidden; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.05); background-color: #fff;">
+                    <!-- 実際のフォームURLが決まり次第 src に指定してください -->
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc_fake_form_url/viewform?embedded=true"
+                        width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+                </div>
             </div>
         </section>
     </main>
