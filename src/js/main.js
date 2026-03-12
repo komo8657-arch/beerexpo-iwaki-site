@@ -84,10 +84,10 @@ function initNav() {
             </ul>
         </li>
         <li class="nav-item has-dropdown only-pc">
-            <a href="/ticket/" class="nav-link">チケット</a>
+            <a href="/tickets.html" class="nav-link">チケット</a>
             <ul class="dropdown">
                 <li><a href="/ticket/" class="dropdown-link">ビア博いわき参加方法</a></li>
-                <li><a href="/ticket/buy.html" class="dropdown-link">チケット購入（近日公開）</a></li>
+                <li><a href="/tickets.html" class="dropdown-link">チケット購入</a></li>
             </ul>
         </li>
         <li class="nav-item only-pc">
@@ -121,7 +121,7 @@ function initNav() {
 
         <!-- ================= スマホ用メニュー ================= -->
         <li class="nav-item only-sp"><a href="/about/outline.html" class="nav-link">イベント概要</a></li>
-        <li class="nav-item only-sp"><a href="/ticket/" class="nav-link">チケット</a></li>
+        <li class="nav-item only-sp"><a href="/tickets.html" class="nav-link">チケット</a></li>
         <li class="nav-item only-sp"><a href="/timetable/" class="nav-link">タイムテーブル</a></li>
         <li class="nav-item only-sp"><a href="/exhibitors/" class="nav-link">出店情報</a></li>
         <li class="nav-item only-sp"><a href="/access/" class="nav-link">アクセス</a></li>
@@ -221,16 +221,16 @@ function initHamburgerMenu() {
             }
         }
 
-        // iPhoneのSafari等で、要素をdisplay:noneにすると遷移がキャンセルされる不具合を回避
-        e.preventDefault();
+        // iPhoneのSafari等での遷移不具合回避
         hamburger.classList.remove('active');
         navList.classList.remove('active');
         document.body.style.overflow = '';
         
-        // 少しだけ遅延させてから確実に遷移させる
-        setTimeout(() => {
+        // メニューが閉じるアニメーションを待たずに即座に遷移を試みる
+        // もしhrefが空でなければ遷移
+        if (link.href && !link.href.includes('#')) {
             window.location.href = link.href;
-        }, 50);
+        }
     });
 
     // メニュー外クリックで閉じる
