@@ -1377,16 +1377,18 @@ h6 {
     left: 0;
     width: 100vw;
     height: 100vh;
+    height: 100dvh; /* スマホブラウザのアドレスバー高さを考慮 */
     background: var(--color-secondary);
     display: none; /* JSでactiveクラスを制御 */
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     z-index: 2400;
-    padding: 0;
+    padding: 80px 0 40px; /* 上部にヘッダー分の余白、下部にスクロール余白 */
     margin: 0;
     transform: none;
     box-sizing: border-box;
+    overflow-y: auto;
   }
 
   .nav-list.active {
@@ -1419,7 +1421,7 @@ h6 {
   }
 
   .nav-item.has-dropdown.active .dropdown {
-    max-height: 500px;
+    max-height: 1000px; /* ドロップダウン開閉の余裕を持たせる */
   }
 
   .dropdown-link {

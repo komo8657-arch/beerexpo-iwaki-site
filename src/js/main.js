@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 async function initInfo() {
     try {
-        const response = await fetch('/data/info.json');
+        const response = await fetch('./data/info.json');
         if (!response.ok) throw new Error('Info data not found');
         const info = await response.json();
 
@@ -360,10 +360,22 @@ async function loadNewsData() {
     if (!newsList) return;
 
     try {
-        const response = await fetch('/data/news.json');
-        if (!response.ok) throw new Error('News data not found');
+        const response = await fetch('../data/news.json');
+        if (!response.ok) {
+            const fallbackResponse = await fetch('./data/news.json');
+            if (!fallbackResponse.ok) throw new Error('News data not found');
+            const news = await fallbackResponse.json();
+            return processNews(newsList, news);
+        }
         const news = await response.json();
+        return processNews(newsList, news);
 
+    } catch (error) {
+        console.warn('ニュースデータの読み込みに失敗しました:', error);
+        newsList.innerHTML = '<p class="text-center" style="padding: 1rem; color: #666;">ニュース情報を読み込み中...</p>';
+    }
+
+    function processNews(newsList, news) {
         // ピン留め優先、その後日付降順でソート
         const sortedNews = news.sort((a, b) => {
             if (a.pinned && !b.pinned) return -1;
@@ -383,10 +395,6 @@ async function loadNewsData() {
                 <span class="news-item-title">${item.title}</span>
             </a>
         `).join('');
-
-    } catch (error) {
-        console.warn('ニュースデータの読み込みに失敗しました:', error);
-        newsList.innerHTML = '<p class="text-center" style="padding: 1rem; color: #666;">ニュース情報を読み込み中...</p>';
     }
 }
 
@@ -406,10 +414,22 @@ async function initNewsDetail() {
     }
 
     try {
-        const response = await fetch('/data/news.json');
-        if (!response.ok) throw new Error('News data not found');
+        const response = await fetch('../data/news.json');
+        if (!response.ok) {
+            const fallbackResponse = await fetch('./data/news.json');
+            if (!fallbackResponse.ok) throw new Error('News data not found');
+            const news = await fallbackResponse.json();
+            return processNewsDetail(detailContainer, news, slug);
+        }
         const news = await response.json();
+        return processNewsDetail(detailContainer, news, slug);
 
+    } catch (error) {
+        console.error('ニュース詳細の読み込みに失敗しました:', error);
+        detailContainer.innerHTML = '<p>ニュースの読み込みに失敗しました。</p>';
+    }
+
+    function processNewsDetail(detailContainer, news, slug) {
         const item = news.find(n => n.slug === slug);
         if (!item) {
             detailContainer.innerHTML = '<p>ニュースが見つかりません。</p>';
@@ -435,10 +455,6 @@ async function initNewsDetail() {
                 </div>
             </article>
         `;
-
-    } catch (error) {
-        console.error('ニュース詳細の読み込みに失敗しました:', error);
-        detailContainer.innerHTML = '<p>ニュースの読み込みに失敗しました。</p>';
     }
 }
 
@@ -450,10 +466,22 @@ async function loadNewsList() {
     if (!listContainer) return;
 
     try {
-        const response = await fetch('/data/news.json');
-        if (!response.ok) throw new Error('News data not found');
+        const response = await fetch('../data/news.json');
+        if (!response.ok) {
+            const fallbackResponse = await fetch('./data/news.json');
+            if (!fallbackResponse.ok) throw new Error('News data not found');
+            const news = await fallbackResponse.json();
+            return processNewsList(listContainer, news);
+        }
         const news = await response.json();
+        return processNewsList(listContainer, news);
 
+    } catch (error) {
+        console.error('ニュース一覧の読み込みに失敗しました:', error);
+        listContainer.innerHTML = '<p>ニュースの読み込みに失敗しました。</p>';
+    }
+
+    function processNewsList(listContainer, news) {
         const sortedNews = news.sort((a, b) => {
             if (a.pinned && !b.pinned) return -1;
             if (!a.pinned && b.pinned) return 1;
@@ -467,10 +495,6 @@ async function loadNewsList() {
                 <span class="news-item-title">${item.title}</span>
             </a>
         `).join('');
-
-    } catch (error) {
-        console.error('ニュース一覧の読み込みに失敗しました:', error);
-        listContainer.innerHTML = '<p>ニュースの読み込みに失敗しました。</p>';
     }
 }
 
@@ -505,9 +529,22 @@ async function loadShopsData() {
     const container = document.querySelector('#shops-list');
     if (!container) return;
     try {
-        const response = await fetch('/data/shops.json');
-        if (!response.ok) throw new Error('Shops data not found');
+        const response = await fetch('../data/shops.json');
+        if (!response.ok) {
+            const fallbackResponse = await fetch('./data/shops.json');
+            if (!fallbackResponse.ok) throw new Error('Shops data not found');
+            const shops = await fallbackResponse.json();
+            return processShops(container, shops);
+        }
         const shops = await response.json();
+        return processShops(container, shops);
+
+    } catch (error) {
+        console.error('ショップ一覧の読み込みに失敗しました:', error);
+        container.innerHTML = '<p>準備中</p>';
+    }
+
+    function processShops(container, shops) {
         container.innerHTML = shops.map(shop => `
             <div class="shop-card">
                 <div class="shop-logo">
@@ -519,11 +556,7 @@ async function loadShopsData() {
                     <p class="shop-style">${shop.style}</p>
                     ${shop.sns ? `<a href="${shop.sns}" target="_blank" class="shop-sns">SNS</a>` : ''}
                 </div>
-            </div>
         `).join('');
-    } catch (error) {
-        console.error(error);
-        container.innerHTML = '<p>出店情報を読み込み中...</p>';
     }
 }
 
@@ -531,9 +564,22 @@ async function loadBeersData() {
     const container = document.querySelector('#beers-list');
     if (!container) return;
     try {
-        const response = await fetch('/data/beers.json');
-        if (!response.ok) throw new Error('Beers data not found');
+        const response = await fetch('../data/beers.json');
+        if (!response.ok) {
+            const fallbackResponse = await fetch('./data/beers.json');
+            if (!fallbackResponse.ok) throw new Error('Beers data not found');
+            const beers = await fallbackResponse.json();
+            return processBeers(container, beers);
+        }
         const beers = await response.json();
+        return processBeers(container, beers);
+
+    } catch (error) {
+        console.error('ビール一覧の読み込みに失敗しました:', error);
+        container.innerHTML = '<p>準備中</p>';
+    }
+
+    function processBeers(container, beers) {
         container.innerHTML = beers.map(beer => `
             <div class="card">
                 <div class="card-body">
@@ -545,11 +591,7 @@ async function loadBeersData() {
                         <strong>価格:</strong> ${beer.price}
                     </p>
                 </div>
-            </div>
         `).join('');
-    } catch (error) {
-        console.error(error);
-        container.innerHTML = '<p>ビール情報を読み込み中...</p>';
     }
 }
 
@@ -557,9 +599,22 @@ async function loadFoodsData() {
     const container = document.querySelector('#foods-list');
     if (!container) return;
     try {
-        const response = await fetch('/data/foods.json');
-        if (!response.ok) throw new Error('Foods data not found');
+        const response = await fetch('../data/foods.json');
+        if (!response.ok) {
+            const fallbackResponse = await fetch('./data/foods.json');
+            if (!fallbackResponse.ok) throw new Error('Foods data not found');
+            const foods = await fallbackResponse.json();
+            return processFoods(container, foods);
+        }
         const foods = await response.json();
+        return processFoods(container, foods);
+
+    } catch (error) {
+        console.error('フード一覧の読み込みに失敗しました:', error);
+        container.innerHTML = '<p>準備中</p>';
+    }
+
+    function processFoods(container, foods) {
         container.innerHTML = foods.map(food => `
             <div class="card">
                 <div class="card-body">
@@ -569,12 +624,8 @@ async function loadFoodsData() {
                         <strong>価格:</strong> ${food.price}
                         ${food.allergen ? `<br><small>⚠️ ${food.allergen}</small>` : ''}
                     </p>
-                </div>
             </div>
         `).join('');
-    } catch (error) {
-        console.error(error);
-        container.innerHTML = '<p>フード情報を読み込み中...</p>';
     }
 }
 
