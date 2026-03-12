@@ -198,24 +198,44 @@ function initHamburgerMenu() {
 
     if (!hamburger || !navList) return;
 
-    hamburger.addEventListener('click', () => {
+    // ハンバーガーボタンのクリックで開閉
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isActive = navList.classList.contains('active');
         hamburger.classList.toggle('active');
         navList.classList.toggle('active');
-        document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : '';
+        document.body.style.overflow = isActive ? '' : 'hidden';
     });
 
-    // ナビリンククリックでメニューを閉じる
-    navList.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            // ドロップダウンリンクでなければ閉じる
-            if (!link.parentElement.classList.contains('has-dropdown')) {
-                hamburger.classList.remove('active');
-                navList.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
+    // イベント委任でnavListのすべてのリンクを処理（ticketリンク含む）
+    navList.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+
+        // ドロップダウン親リンク（has-dropdown の nav-link）はメニューを閉じない
+        const parentLi = link.closest('.nav-item');
+        if (parentLi && parentLi.classList.contains('has-dropdown') && link.classList.contains('nav-link')) {
+            return; // ドロップダウンを開く操作なので閉じない
+        }
+
+        // それ以外のリンク（ticketリンク、dropdown-linkなど）はメニューを閉じる
+        hamburger.classList.remove('active');
+        navList.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // メニュー外クリックで閉じる
+    document.addEventListener('click', (e) => {
+        if (navList.classList.contains('active') &&
+            !navList.contains(e.target) &&
+            !hamburger.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navList.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     });
 }
+
 
 /**
  * ドロップダウンナビ（二層対応）
