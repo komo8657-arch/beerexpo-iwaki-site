@@ -212,16 +212,25 @@ function initHamburgerMenu() {
         const link = e.target.closest('a');
         if (!link) return;
 
-        // ドロップダウン親リンク（has-dropdown の nav-link）はメニューを閉じない
-        const parentLi = link.closest('.nav-item');
-        if (parentLi && parentLi.classList.contains('has-dropdown') && link.classList.contains('nav-link')) {
-            return; // ドロップダウンを開く操作なので閉じない
+        // ドロップダウン親リンク（has-dropdown の nav-link）の制御
+        const parentLi = link.closest('.nav-item.has-dropdown');
+        if (parentLi && link.classList.contains('nav-link')) {
+            // モバイル時、アコーディオンが閉じていたら（開く動作なので）メニューは閉じずにリターン
+            if (window.innerWidth <= 768 && !parentLi.classList.contains('active')) {
+                return;
+            }
         }
 
-        // それ以外のリンク（ticketリンク、dropdown-linkなど）はメニューを閉じる
+        // iPhoneのSafari等で、要素をdisplay:noneにすると遷移がキャンセルされる不具合を回避
+        e.preventDefault();
         hamburger.classList.remove('active');
         navList.classList.remove('active');
         document.body.style.overflow = '';
+        
+        // 少しだけ遅延させてから確実に遷移させる
+        setTimeout(() => {
+            window.location.href = link.href;
+        }, 50);
     });
 
     // メニュー外クリックで閉じる
@@ -256,12 +265,16 @@ function initDropdowns() {
         link.addEventListener('click', (e) => {
             // モバイル幅 OR タッチデバイスの場合はドロップダウン展開
             if (window.innerWidth <= 768 || isTouchDevice()) {
-                e.preventDefault();
-                item.classList.toggle('active');
-                // 他のドロップダウンを閉じる
-                dropdownItems.forEach(other => {
-                    if (other !== item) other.classList.remove('active');
-                });
+                // まだ開いていない場合はデフォルト動作をキャンセルし、開く
+                if (!item.classList.contains('active')) {
+                    e.preventDefault();
+                    item.classList.add('active');
+                    // 他のドロップダウンを閉じる
+                    dropdownItems.forEach(other => {
+                        if (other !== item) other.classList.remove('active');
+                    });
+                }
+                // すでに開いている場合はそのままページ遷移させる
             }
         });
     });

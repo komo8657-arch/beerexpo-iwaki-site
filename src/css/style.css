@@ -76,6 +76,21 @@ body {
   /* 横スクロールを防止 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* 日本語の不自然な改行（単語途中での分断）を防ぐ */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 見出し等、意味のまとまりで改行・バランスよく表示する */
+h1, h2, h3, h4, h5, h6, .hero-catchphrase, .page-title, .section-title {
+  text-wrap: balance;
+}
+
+@supports (word-break: auto-phrase) {
+  body {
+    word-break: auto-phrase;
+  }
 }
 
 p {
