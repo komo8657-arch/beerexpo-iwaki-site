@@ -173,7 +173,9 @@ function initSNS() {
         if (window.innerWidth > 768) {
             navList.insertAdjacentHTML('beforeend', li.outerHTML);
         } else {
-            navList.appendChild(li);
+            // モバイルでは一旦追加しない、または別のコンテナに追加することを検討
+            // レイアウトを壊さないために、ここではスキップするか、nav-list内ではなく専用の場所に置く
+            // 現状はレイアウト優先でモバイルナビ内には追加しない
         }
     }
 

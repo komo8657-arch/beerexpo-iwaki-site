@@ -115,6 +115,7 @@ button {
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+  width: 100%; /* 横幅がいっぱいに広がるように設定 */
 }
 
 .section {
@@ -1345,46 +1346,63 @@ h6 {
     display: block !important;
   }
 
-  :root {
-    --header-height: 60px;
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    display: block !important; /* nav-listを表示するため親要素の非表示を解除 */
   }
 
   .hamburger {
     display: flex;
+    margin: 0 0 0 auto !important;
+    position: relative;
+    z-index: 2500; /* 最前面 */
   }
 
   .nav-list {
     position: fixed;
-    top: var(--header-height);
+    top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
     background: var(--color-secondary);
-    padding: var(--spacing-md) 0;
-    transform: translateX(100%);
-    transition: transform var(--transition-normal);
-    overflow-y: auto;
-    z-index: 1001;
-    height: auto !important;
-    /* 高さを固定しない */
+    display: none; /* JSでactiveクラスを制御 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2400;
+    padding: 0;
+    margin: 0;
+    transform: none;
+    box-sizing: border-box;
   }
 
   .nav-list.active {
-    transform: translateX(0);
+    display: flex !important;
   }
 
   .nav-item {
     width: 100%;
+    text-align: center;
   }
 
   .nav-link {
-    padding: 1rem var(--spacing-md);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 1.1rem;
-    text-align: center;
+    padding: 0.8rem var(--spacing-md);
+    font-size: 1.2rem;
     color: #ffffff !important;
-    /* スマホメニュー内は必ず白 */
+    display: block;
   }
 
   /* スマホ：アコーディオン展開 */
@@ -1416,43 +1434,51 @@ h6 {
   }
 
   .hero {
-    min-height: 70vh;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2rem;
+  }
+
+  .hero-content {
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   /* スマホ：キャッチフレーズ調整 */
   .hero-catchphrase {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     letter-spacing: 0.05em;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    display: block;
+    width: 100%;
+  }
+
+  .hero-subcatchphrase {
+    font-size: 0.8rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.4;
+  }
+
+  .hero-logo-img {
+    max-height: 100px;
+    width: auto;
+    max-width: 70%;
+    margin: 0.5rem auto;
   }
 
   .hero-date {
     font-size: 1.1rem;
-    letter-spacing: 0;
     margin-bottom: 0.5rem;
   }
 
   .hero-venue {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 280px;
-  }
-
-  /* スマホ：トップロゴ調整 */
-  .hero-logo-img {
-    max-height: none;
-    width: 45%;
-    max-width: 180px;
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
   }
 
   .card-grid {
@@ -1513,6 +1539,23 @@ h6 {
     width: 100%;
     margin-top: var(--spacing-xs);
     white-space: normal;
+  }
+
+  /* 共通の横揺れ防止 */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
