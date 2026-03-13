@@ -1572,6 +1572,77 @@ h6 {
     width: 100%;
     box-sizing: border-box;
   }
+
+  /* ====== チケットページ専用：スマートフォンでの読みやすさ調整 ====== */
+  .page-ticket .step-body,
+  .page-ticket .notice-wrap ul li {
+    word-break: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.9 !important; /* 明確に行間を広げる */
+  }
+
+  .page-ticket .step-body p,
+  .page-ticket .step-body ul,
+  .page-ticket .notice-wrap ul li {
+    margin-bottom: 1.5rem !important; /* 段落間の余白を拡大 */
+  }
+
+  /* 不要な改行タグを調整 */
+  .page-ticket .step-body br {
+    display: none;
+  }
+
+  /* STEPカードの余白調整 */
+  .page-ticket .step-card {
+    padding: 1.8rem 1.4rem;
+    margin-bottom: 2.5rem !important; /* 各STEPの区切りを明確に */
+    background: #fdf8f2;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-left: 5px solid var(--color-primary);
+  }
+
+  /* STEPラベル：上下に1行分の余白 */
+  .page-ticket .step-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem !important; /* ラベル下の余白 */
+    display: block;
+    letter-spacing: 0.15em;
+  }
+
+  .page-ticket .step-heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem !important; /* 本文との間隔 */
+    line-height: 1.5;
+  }
+
+  /* 注意書き：見出し化と余白調整 */
+  .page-ticket .notice-wrap {
+    padding: 1.8rem 1.4rem;
+    margin-top: 3rem !important; /* 前の要素との区切り */
+    background: #fdf8f2;
+    border-left: 5px solid var(--color-accent);
+    border-radius: 12px;
+  }
+
+  .page-ticket .notice-wrap-title {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem !important;
+    font-weight: 700;
+    display: block;
+    color: var(--color-secondary);
+  }
+
+  .page-ticket .notice-wrap ul li {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    padding-left: 1.5em;
+    position: relative;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1586,4 +1657,202 @@ h6 {
   .gallery-tabs {
     flex-wrap: wrap;
   }
+}.ticket-section {
+    padding: 3rem 0 4rem;
+}
+
+.ticket-section+.ticket-section {
+    border-top: 2px solid var(--color-border);
+}
+
+.ticket-section-title {
+    font-size: 1.7rem;
+    color: var(--color-secondary);
+    margin-bottom: 2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 3px solid var(--color-primary);
+}
+
+/* 画像ラチE��ー */
+.ticket-img-wrap {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.ticket-img-wrap img {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
+}
+
+/* STEPカーチE*/
+.step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.step-card {
+    background: #fdf8f2;
+    border-radius: 12px;
+    padding: 1.5rem 1.8rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-left: 5px solid var(--color-primary);
+}
+
+.step-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    letter-spacing: 0.12em;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+}
+
+.step-heading {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 0.9rem;
+}
+
+.step-body {
+    font-size: 0.96rem;
+    line-height: 1.9;
+    color: var(--color-text);
+}
+
+.step-body ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+}
+
+.step-body ul li {
+    padding-left: 1.2em;
+    position: relative;
+    margin-bottom: 0.3rem;
+}
+
+.step-body ul li::before {
+    content: "・";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary-dark);
+}
+
+/* 注意事頁E�EチE��ス */
+.notice-wrap {
+    background: #f5f0e8;
+    border-radius: 12px;
+    padding: 1.4rem 1.8rem;
+    margin-top: 2rem;
+}
+
+.notice-wrap-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.notice-wrap ul {
+    list-style: none;
+    padding: 0;
+}
+
+.notice-wrap ul li {
+    font-size: 0.93rem;
+    line-height: 1.9;
+    color: var(--color-text);
+    padding-left: 1.3em;
+    position: relative;
+    margin-bottom: 0.3rem;
+}
+
+.notice-wrap ul li::before {
+    content: "※";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-size: 0.85rem;
+}
+
+/* ====== スマ�Eトフォン向け調整 ====== */
+@media (max-width: 768px) {
+    .ticket-section {
+        padding: 2rem 0 3rem;
+    }
+
+    .ticket-section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* 斁E��の読みめE��さ改喁E*/
+    .step-body,
+    .notice-wrap ul li {
+        word-break: normal;
+        overflow-wrap: anywhere;
+        line-height: 1.85; /* 少し庁E��に調整 */
+    }
+
+    .step-body p,
+    .step-body ul,
+    .notice-wrap ul li {
+        margin-bottom: 1.25rem; /* 段落間�E余白を拡大 */
+    }
+
+    /* 不要な改行タグを調整 */
+    .step-body br {
+        display: none;
+    }
+
+    /* STEPカード�E全体余白 */
+    .step-card {
+        padding: 1.5rem 1.2rem 0.5rem; /* 下部の冁E�E余白を調整 */
+        margin-bottom: 2rem; /* STEP間�E余白を確俁E*/
+    }
+
+    /* STEPラベルを独立した見�Eしとして表示�E�上丁E行�Eの余白�E�E*/
+    .step-label {
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem; /* 下に1行�Eの余白 */
+        display: block;
+        letter-spacing: 0.15em;
+    }
+
+    /* 見た目上�E「STEP行�E上�E余白」�E、直前�E要素との間隔�E�カード�EpaddingめEargin�E�で調整 */
+
+    .step-heading {
+        font-size: 1.15rem;
+        margin-bottom: 1.2rem; /* 本斁E��の間隔を確俁E*/
+        line-height: 1.5;
+    }
+
+    /* 注意書き�E調整 */
+    .notice-wrap {
+        padding: 1.5rem 1.2rem;
+        margin-top: 2.5rem; /* 前�E要素との区刁E��を強ぁE*/
+    }
+
+    .notice-wrap-title {
+        font-size: 1.1rem;
+        margin-bottom: 1.2rem;
+        font-weight: 700;
+        display: block;
+    }
+
+    .notice-wrap ul li {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+        padding-left: 1.5em;
+    }
 }
