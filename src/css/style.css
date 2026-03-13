@@ -1374,11 +1374,7 @@ h6 {
   }
 
   .nav {
-    position: absolute;
-    width: 0;
-    height: 0;
-    pointer-events: none;
-    display: block !important; /* nav-listを表示するため親要素の非表示を解除 */
+    display: contents; /* 親要素として機能させず、子要素をそのまま通す */
   }
 
   .hamburger {
