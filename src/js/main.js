@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 async function initInfo() {
     try {
-        const response = await fetch('./data/info.json');
+        const response = await fetch('/data/info.json');
         if (!response.ok) throw new Error('Info data not found');
         const info = await response.json();
 

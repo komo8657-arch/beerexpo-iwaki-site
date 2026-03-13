@@ -537,6 +537,7 @@ button {
 
 .hero-logo-img:hover {
   opacity: 0.95;
+  transform: none;
 }
 
 /* ヘッダーロゴには余白や変形を適用しない */
@@ -550,6 +551,7 @@ button {
 
 .logo:hover {
   opacity: 0.9;
+  transform: none;
 }
 
 .hero-date {
