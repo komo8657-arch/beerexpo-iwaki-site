@@ -1,4 +1,4 @@
-(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const o of e)if(o.type==="childList")for(const i of o.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&s(i)}).observe(document,{childList:!0,subtree:!0});function t(e){const o={};return e.integrity&&(o.integrity=e.integrity),e.referrerPolicy&&(o.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?o.credentials="include":e.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function s(e){if(e.ep)return;e.ep=!0;const o=t(e);fetch(e.href,o)}})();document.addEventListener("DOMContentLoaded",()=>{p(),u(),m(),v(),y(),g(),w(),h(),document.getElementById("news-list")&&k(),document.getElementById("news-detail")&&L(),document.getElementById("news-all-list")&&b();const n=document.querySelector(".timetable-img-container");n&&n.addEventListener("click",()=>{const a=n.querySelector("img");if(a&&window.initModal){const t=document.querySelector(".modal"),s=t==null?void 0:t.querySelector("img");t&&s&&(s.src=a.src,t.classList.add("active"),document.body.style.overflow="hidden")}})});async function u(){try{const n=await fetch("./data/info.json");if(!n.ok)throw new Error("Info data not found");const a=await n.json();["event_name","event_name_en","catchphrase","date_short","date_html","time_html","venue_name","venue_address","fee_html","organizer"].forEach(s=>{document.querySelectorAll(`.info-${s}`).forEach(e=>{e.innerHTML=a[s]})})}catch(n){console.error("info.jsonの読み込みに失敗しました:",n)}}function p(){const n=document.querySelector(".nav-list");n&&(n.innerHTML=`
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const o of e)if(o.type==="childList")for(const i of o.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&s(i)}).observe(document,{childList:!0,subtree:!0});function t(e){const o={};return e.integrity&&(o.integrity=e.integrity),e.referrerPolicy&&(o.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?o.credentials="include":e.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function s(e){if(e.ep)return;e.ep=!0;const o=t(e);fetch(e.href,o)}})();document.addEventListener("DOMContentLoaded",()=>{p(),u(),m(),v(),y(),g(),w(),h(),document.getElementById("news-list")&&k(),document.getElementById("news-detail")&&L(),document.getElementById("news-all-list")&&b();const n=document.querySelector(".timetable-img-container");n&&n.addEventListener("click",()=>{const a=n.querySelector("img");if(a&&window.initModal){const t=document.querySelector(".modal"),s=t==null?void 0:t.querySelector("img");t&&s&&(s.src=a.src,t.classList.add("active"),document.body.style.overflow="hidden")}})});async function u(){try{const n=await fetch("/data/info.json");if(!n.ok)throw new Error("Info data not found");const a=await n.json();["event_name","event_name_en","catchphrase","date_short","date_html","time_html","venue_name","venue_address","fee_html","organizer"].forEach(s=>{document.querySelectorAll(`.info-${s}`).forEach(e=>{e.innerHTML=a[s]})})}catch(n){console.error("info.jsonの読み込みに失敗しました:",n)}}function p(){const n=document.querySelector(".nav-list");n&&(n.innerHTML=`
         <!-- ================= PC用メニュー ================= -->
         <li class="nav-item has-dropdown only-pc">
             <a href="/about/" class="nav-link">ビア博とは</a>
@@ -8,12 +8,8 @@
                 <li><a href="/about/outline.html" class="dropdown-link">開催概要</a></li>
             </ul>
         </li>
-        <li class="nav-item has-dropdown only-pc">
-            <a href="/tickets.html" class="nav-link">チケット</a>
-            <ul class="dropdown">
-                <li><a href="/ticket/" class="dropdown-link">ビア博いわき参加方法</a></li>
-                <li><a href="/tickets.html" class="dropdown-link">チケット購入</a></li>
-            </ul>
+        <li class="nav-item only-pc">
+            <a href="/ticket/" class="nav-link">チケットについて</a>
         </li>
         <li class="nav-item only-pc">
             <a href="/timetable/" class="nav-link">タイムテーブル</a>
@@ -46,7 +42,7 @@
 
         <!-- ================= スマホ用メニュー ================= -->
         <li class="nav-item only-sp"><a href="/about/outline.html" class="nav-link">イベント概要</a></li>
-        <li class="nav-item only-sp"><a href="/tickets.html" class="nav-link">チケット</a></li>
+        <li class="nav-item only-sp"><a href="/ticket/" class="nav-link">チケットについて</a></li>
         <li class="nav-item only-sp"><a href="/timetable/" class="nav-link">タイムテーブル</a></li>
         <li class="nav-item only-sp"><a href="/exhibitors/" class="nav-link">出店情報</a></li>
         <li class="nav-item only-sp"><a href="/access/" class="nav-link">アクセス</a></li>
