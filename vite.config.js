@@ -15,6 +15,7 @@ export default defineConfig({
         faq: resolve(__dirname, 'guide/faq.html'),
         ticket: resolve(__dirname, 'ticket/index.html'),
         access: resolve(__dirname, 'access/index.html'),
+        parking: resolve(__dirname, 'access/parking.html'),
         timetable: resolve(__dirname, 'timetable/index.html'),
         exhibitors: resolve(__dirname, 'exhibitors.html'),
         beers: resolve(__dirname, 'beers.html'),
