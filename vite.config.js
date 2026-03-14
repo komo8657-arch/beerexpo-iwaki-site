@@ -1,7 +1,21 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import fs from 'fs';
 
 export default defineConfig({
+  plugins: [
+    {
+      name: 'copy-drinks',
+      closeBundle() {
+        const src = resolve(__dirname, 'dist/exhibitors/drinks.html');
+        const dest = resolve(__dirname, 'dist/drinks.html');
+        if (fs.existsSync(src)) {
+          fs.copyFileSync(src, dest);
+          console.log('Copied drinks.html to dist root');
+        }
+      }
+    }
+  ],
   root: './',
   build: {
     outDir: 'dist',
