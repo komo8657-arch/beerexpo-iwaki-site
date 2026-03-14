@@ -79,7 +79,7 @@
 }
 
 .step-body ul li::before {
-    content: "・";
+    content: "\30FB";
     position: absolute;
     left: 0;
     color: var(--color-primary-dark);
@@ -118,7 +118,7 @@
 }
 
 .notice-wrap ul li::before {
-    content: "※";
+    content: "\203B";
     position: absolute;
     left: 0;
     color: var(--color-accent);
