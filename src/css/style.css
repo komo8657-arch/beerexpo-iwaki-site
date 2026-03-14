@@ -1,57 +1,57 @@
 /* =====================================================
-   ビア博いわき 公式サイト - スタイルシート v2
-   Vite対応 + 二層ナビ + 新着ニュース
+   繝薙い蜊壹＞繧上″ 蜈ｬ蠑上し繧､繝� - 繧ｹ繧ｿ繧､繝ｫ繧ｷ繝ｼ繝� v2
+   Vite蟇ｾ蠢� + 莠悟ｱ､繝翫ン + 譁ｰ逹繝九Η繝ｼ繧ｹ
    ===================================================== */
 
-/* === CSS変数 === */
+/* === CSS螟画焚 === */
 :root {
-  /* カラーパレット（白基調・パステル・落ち着いた配色） */
+  /* 繧ｫ繝ｩ繝ｼ繝代Ξ繝�ヨ�育區蝓ｺ隱ｿ繝ｻ繝代せ繝�Ν繝ｻ關ｽ縺｡逹縺�◆驟崎牡�� */
   --color-primary: #f4d03f;
-  /* 淡いパステルゴールド */
+  /* 豺｡縺�ヱ繧ｹ繝�Ν繧ｴ繝ｼ繝ｫ繝� */
   --color-primary-dark: #ccaa33;
-  /* 視認性の良いゴールド */
+  /* 隕冶ｪ肴ｧ縺ｮ濶ｯ縺�ざ繝ｼ繝ｫ繝� */
   --color-primary-light: #fff9e0;
-  /* 非常に薄いイエロー */
+  /* 髱槫ｸｸ縺ｫ阮�＞繧､繧ｨ繝ｭ繝ｼ */
   --color-secondary: #5d4037;
-  /* 落ち着いたブラウン */
+  /* 關ｽ縺｡逹縺�◆繝悶Λ繧ｦ繝ｳ */
   --color-accent: #e67e22;
-  /* アクセントオレンジ（彩度抑えめ） */
+  /* 繧｢繧ｯ繧ｻ繝ｳ繝医が繝ｬ繝ｳ繧ｸ�亥ｽｩ蠎ｦ謚代∴繧�ｼ� */
   --color-bg: #ede8df;
-  /* オフホワイト（さらに濃いベージュ・2段階暗く） */
+  /* 繧ｪ繝輔�繝ｯ繧､繝茨ｼ医＆繧峨↓豼�＞繝吶�繧ｸ繝･繝ｻ2谿ｵ髫取囓縺擾ｼ� */
   --color-bg-sub: #e5dfd4;
-  /* サブ背景（さらに濃いベージュ） */
+  /* 繧ｵ繝冶レ譎ｯ�医＆繧峨↓豼�＞繝吶�繧ｸ繝･�� */
   --color-text: #333333;
-  /* 濃いグレー（可読性重視） */
+  /* 豼�＞繧ｰ繝ｬ繝ｼ�亥庄隱ｭ諤ｧ驥崎ｦ厄ｼ� */
   --color-text-light: #777777;
   --color-text-inverse: #ffffff;
   --color-border: #eeeeee;
   --color-card-bg: #ffffff;
   --color-overlay: rgba(93, 64, 55, 0.9);
-  /* 濃いブラウンのオーバーレイ */
+  /* 豼�＞繝悶Λ繧ｦ繝ｳ縺ｮ繧ｪ繝ｼ繝舌�繝ｬ繧､ */
   --color-news-category: #7986cb;
-  /* パステルブルー */
+  /* 繝代せ繝�Ν繝悶Ν繝ｼ */
 
-  /* フォント */
+  /* 繝輔か繝ｳ繝� */
   --font-main: 'Noto Sans JP', sans-serif;
   --font-heading: 'Zen Maru Gothic', sans-serif;
 
-  /* サイズ */
+  /* 繧ｵ繧､繧ｺ */
   --container-width: 1200px;
   --header-height: 70px;
   --border-radius: 12px;
-  /* 少し丸みを増やす */
+  /* 蟆代＠荳ｸ縺ｿ繧貞｢励ｄ縺� */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2.5rem;
   --spacing-xl: 4rem;
 
-  /* トランジション */
+  /* 繝医Λ繝ｳ繧ｸ繧ｷ繝ｧ繝ｳ */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
 }
 
-/* === リセット === */
+/* === 繝ｪ繧ｻ繝�ヨ === */
 *,
 *::before,
 *::after {
@@ -68,21 +68,21 @@ body {
   font-family: var(--font-main);
   font-size: 16px;
   line-height: 1.8;
-  /* 行間を広めに */
+  /* 陦碁俣繧貞ｺ�ａ縺ｫ */
   color: var(--color-text);
   background-color: var(--color-bg);
   min-height: 100vh;
   overflow-x: hidden;
-  /* 横スクロールを防止 */
+  /* 讓ｪ繧ｹ繧ｯ繝ｭ繝ｼ繝ｫ繧帝亟豁｢ */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* 日本語の不自然な改行（単語途中での分断）を防ぐ */
+  /* 譌･譛ｬ隱槭�荳崎�辟ｶ縺ｪ謾ｹ陦鯉ｼ亥腰隱樣比ｸｭ縺ｧ縺ｮ蛻�妙�峨ｒ髦ｲ縺� */
   word-break: keep-all;
   overflow-wrap: break-word;
 }
 
-/* 見出し等、意味のまとまりで改行・バランスよく表示する */
+/* 隕句�縺礼ｭ峨∵э蜻ｳ縺ｮ縺ｾ縺ｨ縺ｾ繧翫〒謾ｹ陦後�繝舌Λ繝ｳ繧ｹ繧医￥陦ｨ遉ｺ縺吶ｋ */
 h1, h2, h3, h4, h5, h6, .hero-catchphrase, .page-title, .section-title {
   text-wrap: balance;
 }
@@ -125,12 +125,12 @@ button {
   font-family: inherit;
 }
 
-/* === ユーティリティ === */
+/* === 繝ｦ繝ｼ繝�ぅ繝ｪ繝�ぅ === */
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
-  width: 100%; /* 横幅がいっぱいに広がるように設定 */
+  width: 100%; /* 讓ｪ蟷�′縺�▲縺ｱ縺�↓蠎�′繧九ｈ縺�↓險ｭ螳� */
 }
 
 .section {
@@ -184,7 +184,7 @@ button {
   display: none !important;
 }
 
-/* === ヘッダー（二層ナビ対応） === */
+/* === 繝倥ャ繝繝ｼ�井ｺ悟ｱ､繝翫ン蟇ｾ蠢懶ｼ� === */
 .header {
   position: fixed;
   top: 0;
@@ -192,7 +192,7 @@ button {
   right: 0;
   height: var(--header-height);
   background: rgba(93, 64, 55, 0.95);
-  /* フッターと同じブラウン */
+  /* 繝輔ャ繧ｿ繝ｼ縺ｨ蜷後§繝悶Λ繧ｦ繝ｳ */
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(8px);
@@ -216,7 +216,7 @@ button {
 
 .logo-text {
   display: none;
-  /* 画像ロゴを使用するためテキストは非表示 */
+  /* 逕ｻ蜒上Ο繧ｴ繧剃ｽｿ逕ｨ縺吶ｋ縺溘ａ繝�く繧ｹ繝医�髱櫁｡ｨ遉ｺ */
 }
 
 .logo-img {
@@ -227,7 +227,7 @@ button {
   object-fit: contain;
 }
 
-/* SNSリンク */
+/* SNS繝ｪ繝ｳ繧ｯ */
 .nav-sns {
   display: flex;
   align-items: center;
@@ -252,7 +252,7 @@ button {
   background: var(--color-primary);
 }
 
-/* タイムテーブル画像 */
+/* 繧ｿ繧､繝�繝��繝悶Ν逕ｻ蜒� */
 .timetable-img-container {
   max-width: 800px;
   margin: 0 auto;
@@ -273,7 +273,7 @@ button {
   display: block;
 }
 
-/* 二層ナビゲーション */
+/* 莠悟ｱ､繝翫ン繧ｲ繝ｼ繧ｷ繝ｧ繝ｳ */
 .nav {
   display: flex;
   align-items: center;
@@ -289,20 +289,20 @@ button {
 .nav-item {
   position: relative;
   flex-shrink: 0;
-  /* 縮んで改行されるのを防ぐ */
+  /* 邵ｮ繧薙〒謾ｹ陦後＆繧後ｋ縺ｮ繧帝亟縺� */
 }
 
 .nav-link {
   display: block;
   padding: var(--spacing-sm) var(--spacing-md);
   color: var(--color-text-inverse);
-  /* 白（ブラウン背景用） */
+  /* 逋ｽ�医ヶ繝ｩ繧ｦ繝ｳ閭梧勹逕ｨ�� */
   font-size: 0.9rem;
   font-weight: 500;
   transition: all var(--transition-fast);
   white-space: nowrap;
   word-break: keep-all;
-  /* 単語の途中での改行を禁止 */
+  /* 蜊倩ｪ槭�騾比ｸｭ縺ｧ縺ｮ謾ｹ陦後ｒ遖∵ｭ｢ */
 }
 
 .nav-link:hover {
@@ -310,9 +310,9 @@ button {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* 第一層→第二層ドロップダウン */
+/* 隨ｬ荳螻､竊堤ｬｬ莠悟ｱ､繝峨Ο繝��繝繧ｦ繝ｳ */
 .nav-item.has-dropdown>.nav-link::after {
-  content: '▼';
+  content: '笆ｼ';
   font-size: 0.6rem;
   margin-left: 0.4rem;
   opacity: 0.7;
@@ -358,7 +358,7 @@ button {
   padding-left: calc(var(--spacing-md) + 5px);
 }
 
-/* ハンバーガーメニュー */
+/* 繝上Φ繝舌�繧ｬ繝ｼ繝｡繝九Η繝ｼ */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -372,7 +372,7 @@ button {
   width: 25px;
   height: 3px;
   background: var(--color-text-inverse);
-  /* 白（ブラウン背景用） */
+  /* 逋ｽ�医ヶ繝ｩ繧ｦ繝ｳ閭梧勹逕ｨ�� */
   border-radius: 2px;
   transition: all var(--transition-normal);
 }
@@ -389,13 +389,13 @@ button {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* === メインコンテンツ === */
+/* === 繝｡繧､繝ｳ繧ｳ繝ｳ繝�Φ繝� === */
 .main {
   padding-top: var(--header-height);
   min-height: calc(100vh - var(--header-height));
 }
 
-/* === ヒーローセクション === */
+/* === 繝偵�繝ｭ繝ｼ繧ｻ繧ｯ繧ｷ繝ｧ繝ｳ === */
 .hero {
   position: relative;
   min-height: 85vh;
@@ -407,7 +407,7 @@ button {
   overflow: hidden;
 }
 
-/* スライドショーコンテナ */
+/* 繧ｹ繝ｩ繧､繝峨す繝ｧ繝ｼ繧ｳ繝ｳ繝�リ */
 .hero-slideshow {
   position: absolute;
   inset: 0;
@@ -416,7 +416,7 @@ button {
   z-index: 0;
 }
 
-/* 各スライド共通スタイル */
+/* 蜷�せ繝ｩ繧､繝牙�騾壹せ繧ｿ繧､繝ｫ */
 .slide {
   position: absolute;
   inset: 0;
@@ -427,12 +427,12 @@ button {
   background-repeat: no-repeat;
   opacity: 0;
   animation: slideFade 25s infinite;
-  /* 5枚 × 5秒 = 25秒1サイクル */
+  /* 5譫� ﾃ� 5遘� = 25遘�1繧ｵ繧､繧ｯ繝ｫ */
 }
 
 /* 
- * 5枚の画像設定
- * 新規追加された画像と既存のhaikei.jpgを指定
+ * 5譫壹�逕ｻ蜒剰ｨｭ螳�
+ * 譁ｰ隕剰ｿｽ蜉�縺輔ｌ縺溽判蜒上→譌｢蟄倥�haikei.jpg繧呈欠螳�
  */
 .slide-1 {
   background-image: url('/assets/img/slide1.webp');
@@ -460,11 +460,11 @@ button {
 }
 
 /*
- * アニメーション定義（25秒サイクル）
- * 0%〜4%   : フェードイン (1秒)
- * 4%〜20%  : 表示維持 (4秒)
- * 20%〜24% : フェードアウト (1秒)
- * 残り     : 非表示 (20秒)
+ * 繧｢繝九Γ繝ｼ繧ｷ繝ｧ繝ｳ螳夂ｾｩ��25遘偵し繧､繧ｯ繝ｫ��
+ * 0%縲�4%   : 繝輔ぉ繝ｼ繝峨う繝ｳ (1遘�)
+ * 4%縲�20%  : 陦ｨ遉ｺ邯ｭ謖� (4遘�)
+ * 20%縲�24% : 繝輔ぉ繝ｼ繝峨い繧ｦ繝� (1遘�)
+ * 谿九ｊ     : 髱櫁｡ｨ遉ｺ (20遘�)
  */
 @keyframes slideFade {
   0% {
@@ -491,31 +491,31 @@ button {
   }
 }
 
-/* 背景画像にベージュを繪いてなじませるオーバーレイ */
+/* 閭梧勹逕ｻ蜒上↓繝吶�繧ｸ繝･繧堤ｹｪ縺�※縺ｪ縺倥∪縺帙ｋ繧ｪ繝ｼ繝舌�繝ｬ繧､ */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background: rgba(237, 232, 223, 0.35);
-  /* 背景画像を十分に見せる */
+  /* 閭梧勹逕ｻ蜒上ｒ蜊∝�縺ｫ隕九○繧� */
   z-index: 1;
-  /* スライドショーの上に重ねる */
+  /* 繧ｹ繝ｩ繧､繝峨す繝ｧ繝ｼ縺ｮ荳翫↓驥阪�繧� */
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  /* オーバーレイより上に表示 */
+  /* 繧ｪ繝ｼ繝舌�繝ｬ繧､繧医ｊ荳翫↓陦ｨ遉ｺ */
   padding: var(--spacing-xl) var(--spacing-md);
 }
 
-/* キャッチフレーズ（ロゴの上） - 大きく主張 */
+/* 繧ｭ繝｣繝�メ繝輔Ξ繝ｼ繧ｺ�医Ο繧ｴ縺ｮ荳奇ｼ� - 螟ｧ縺阪￥荳ｻ蠑ｵ */
 .hero-catchphrase {
-  font-family: 'Shippori Mincho', '游明朝', 'Yu Mincho', serif;
+  font-family: 'Shippori Mincho', '貂ｸ譏取悃', 'Yu Mincho', serif;
   font-size: 2.2rem;
   font-weight: 600;
   color: #222222;
-  /* 黒 */
+  /* 鮟� */
   letter-spacing: 0.25em;
   margin-bottom: 1.5rem;
   text-shadow: 0 1px 6px rgba(237, 232, 223, 0.8);
@@ -526,7 +526,7 @@ button {
   margin: 0 auto var(--spacing-lg);
 }
 
-/* トップページロゴ（イラスト入り・透過PNG） */
+/* 繝医ャ繝励�繝ｼ繧ｸ繝ｭ繧ｴ�医う繝ｩ繧ｹ繝亥�繧翫�騾城℃PNG�� */
 .hero-logo-img {
   display: block;
   max-height: 200px;
@@ -535,18 +535,15 @@ button {
   transition: opacity 0.3s ease;
 }
 
-.hero-logo-img:hover {
-  opacity: 0.95;
-  transform: none;
-}
 
-/* ヘッダーロゴには余白や変形を適用しない */
+
+/* 繝倥ャ繝繝ｼ繝ｭ繧ｴ縺ｫ縺ｯ菴咏區繧�､牙ｽ｢繧帝←逕ｨ縺励↑縺� */
 .logo {
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
   text-decoration: none;
-  /* 下線なし */
+  /* 荳狗ｷ壹↑縺� */
 }
 
 .logo:hover {
@@ -558,7 +555,7 @@ button {
   font-size: 2rem;
   font-weight: 800;
   color: #222222;
-  /* 黒 */
+  /* 鮟� */
   margin-bottom: var(--spacing-sm);
   letter-spacing: 0.05em;
   text-shadow: 0 1px 4px rgba(237, 232, 223, 0.9);
@@ -570,7 +567,7 @@ button {
   margin-bottom: var(--spacing-lg);
   font-weight: 600;
   text-shadow: 0 1px 6px rgba(237, 232, 223, 1);
-  /* 読みやすく */
+  /* 隱ｭ縺ｿ繧�☆縺� */
 }
 
 .hero-buttons {
@@ -580,7 +577,7 @@ button {
   justify-content: center;
 }
 
-/* === 新着ニュースセクション === */
+/* === 譁ｰ逹繝九Η繝ｼ繧ｹ繧ｻ繧ｯ繧ｷ繝ｧ繝ｳ === */
 .news-section {
   background: var(--color-card-bg);
   padding: var(--spacing-lg) 0;
@@ -604,7 +601,7 @@ button {
 }
 
 .news-title::before {
-  content: '📢';
+  content: '�討';
 }
 
 .news-more {
@@ -690,10 +687,10 @@ button {
 }
 
 .news-item.pinned .news-item-title::before {
-  content: '📌 ';
+  content: '�東 ';
 }
 
-/* === ボタン === */
+/* === 繝懊ち繝ｳ === */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -738,7 +735,7 @@ button {
   color: var(--color-text-inverse);
 }
 
-/* === カード === */
+/* === 繧ｫ繝ｼ繝� === */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -787,7 +784,7 @@ button {
   margin-bottom: var(--spacing-xs);
 }
 
-/* === トピックスカード === */
+/* === 繝医ヴ繝�け繧ｹ繧ｫ繝ｼ繝� === */
 .topics-card {
   display: flex;
   gap: var(--spacing-md);
@@ -815,7 +812,7 @@ button {
   flex: 1;
 }
 
-/* === アコーディオン（FAQ） === */
+/* === 繧｢繧ｳ繝ｼ繝�ぅ繧ｪ繝ｳ��AQ�� === */
 .accordion {
   max-width: 800px;
   margin: 0 auto;
@@ -873,7 +870,7 @@ button {
   line-height: 1.8;
 }
 
-/* === ギャラリー === */
+/* === 繧ｮ繝｣繝ｩ繝ｪ繝ｼ === */
 .gallery-tabs {
   display: flex;
   justify-content: center;
@@ -921,7 +918,7 @@ button {
   object-fit: cover;
 }
 
-/* === モーダル === */
+/* === 繝｢繝ｼ繝繝ｫ === */
 .modal {
   position: fixed;
   top: 0;
@@ -971,7 +968,7 @@ button {
   transform: scale(1.2);
 }
 
-/* === 情報ボックス === */
+/* === 諠��ｱ繝懊ャ繧ｯ繧ｹ === */
 .info-box {
   background: var(--color-card-bg);
   border-radius: var(--border-radius);
@@ -1024,7 +1021,7 @@ h6 {
   color: var(--color-text);
 }
 
-/* === チケットカード === */
+/* === 繝√こ繝�ヨ繧ｫ繝ｼ繝� === */
 .ticket-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1051,7 +1048,7 @@ h6 {
 }
 
 .ticket-card.featured::before {
-  content: 'おすすめ';
+  content: '縺翫☆縺吶ａ';
   position: absolute;
   top: -12px;
   left: 50%;
@@ -1089,7 +1086,7 @@ h6 {
   margin-bottom: var(--spacing-md);
 }
 
-/* === 注意事項 === */
+/* === 豕ｨ諢丈ｺ矩�� === */
 .notice-box {
   background: #fff9e6;
   border-left: 4px solid var(--color-primary);
@@ -1114,7 +1111,7 @@ h6 {
   color: var(--color-text);
 }
 
-/* === マップセクション === */
+/* === 繝槭ャ繝励そ繧ｯ繧ｷ繝ｧ繝ｳ === */
 .map-container {
   background: var(--color-card-bg);
   border-radius: var(--border-radius);
@@ -1133,7 +1130,7 @@ h6 {
   opacity: 0.9;
 }
 
-/* === フッター === */
+/* === 繝輔ャ繧ｿ繝ｼ === */
 .footer {
   background: var(--color-secondary);
   color: var(--color-text-inverse);
@@ -1208,7 +1205,7 @@ h6 {
   opacity: 0.6;
 }
 
-/* === ページヘッダー === */
+/* === 繝壹�繧ｸ繝倥ャ繝繝ｼ === */
 .page-header {
   background: linear-gradient(135deg, var(--color-secondary), #3d2517);
   padding: var(--spacing-xl) 0;
@@ -1228,7 +1225,7 @@ h6 {
   opacity: 0.8;
 }
 
-/* パンくずリスト */
+/* 繝代Φ縺上★繝ｪ繧ｹ繝� */
 .breadcrumb {
   display: flex;
   align-items: center;
@@ -1250,7 +1247,7 @@ h6 {
   opacity: 0.5;
 }
 
-/* === カテゴリタグ === */
+/* === 繧ｫ繝�ざ繝ｪ繧ｿ繧ｰ === */
 .tag {
   display: inline-block;
   padding: 0.25rem 0.75rem;
@@ -1266,7 +1263,7 @@ h6 {
   color: var(--color-text-inverse);
 }
 
-/* === ショップカード === */
+/* === 繧ｷ繝ｧ繝��繧ｫ繝ｼ繝� === */
 .shop-card {
   display: flex;
   gap: var(--spacing-md);
@@ -1321,7 +1318,7 @@ h6 {
   color: var(--color-primary-dark);
 }
 
-/* === 新着詳細ページ === */
+/* === 譁ｰ逹隧ｳ邏ｰ繝壹�繧ｸ === */
 .news-detail {
   max-width: 800px;
   margin: 0 auto;
@@ -1353,7 +1350,7 @@ h6 {
   margin-bottom: var(--spacing-md);
 }
 
-/* === レスポンシブ === */
+/* === 繝ｬ繧ｹ繝昴Φ繧ｷ繝� === */
 @media (max-width: 768px) {
   .only-pc {
     display: none !important;
@@ -1374,14 +1371,14 @@ h6 {
   }
 
   .nav {
-    display: contents; /* 親要素として機能させず、子要素をそのまま通す */
+    display: contents; /* 隕ｪ隕∫ｴ�縺ｨ縺励※讖溯�縺輔○縺壹∝ｭ占ｦ∫ｴ�繧偵◎縺ｮ縺ｾ縺ｾ騾壹☆ */
   }
 
   .hamburger {
     display: flex;
     margin: 0 0 0 auto !important;
     position: relative;
-    z-index: 2500; /* 最前面 */
+    z-index: 2500; /* 譛蜑埼擇 */
   }
 
   .nav-list {
@@ -1390,14 +1387,14 @@ h6 {
     left: 0;
     width: 100vw;
     height: 100vh;
-    height: 100dvh; /* スマホブラウザのアドレスバー高さを考慮 */
+    height: 100dvh; /* 繧ｹ繝槭�繝悶Λ繧ｦ繧ｶ縺ｮ繧｢繝峨Ξ繧ｹ繝舌�鬮倥＆繧定�� */
     background: var(--color-secondary);
-    display: none; /* JSでactiveクラスを制御 */
+    display: none; /* JS縺ｧactive繧ｯ繝ｩ繧ｹ繧貞宛蠕｡ */
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     z-index: 2400;
-    padding: 80px 0 40px; /* 上部にヘッダー分の余白、下部にスクロール余白 */
+    padding: 80px 0 40px; /* 荳企Κ縺ｫ繝倥ャ繝繝ｼ蛻��菴咏區縲∽ｸ矩Κ縺ｫ繧ｹ繧ｯ繝ｭ繝ｼ繝ｫ菴咏區 */
     margin: 0;
     transform: none;
     box-sizing: border-box;
@@ -1420,7 +1417,7 @@ h6 {
     display: block;
   }
 
-  /* スマホ：アコーディオン展開 */
+  /* 繧ｹ繝槭��壹い繧ｳ繝ｼ繝�ぅ繧ｪ繝ｳ螻暮幕 */
   .dropdown {
     position: static;
     opacity: 1;
@@ -1434,7 +1431,7 @@ h6 {
   }
 
   .nav-item.has-dropdown.active .dropdown {
-    max-height: 1000px; /* ドロップダウン開閉の余裕を持たせる */
+    max-height: 1000px; /* 繝峨Ο繝��繝繧ｦ繝ｳ髢矩哩縺ｮ菴呵｣輔ｒ謖√◆縺帙ｋ */
   }
 
   .dropdown-link {
@@ -1463,7 +1460,7 @@ h6 {
     box-sizing: border-box;
   }
 
-  /* スマホ：キャッチフレーズ調整 */
+  /* 繧ｹ繝槭��壹く繝｣繝�メ繝輔Ξ繝ｼ繧ｺ隱ｿ謨ｴ */
   .hero-catchphrase {
     font-size: 1.1rem;
     letter-spacing: 0.05em;
@@ -1537,7 +1534,7 @@ h6 {
     text-align: center;
   }
 
-  /* 新着ニュース：スマホは5件まで */
+  /* 譁ｰ逹繝九Η繝ｼ繧ｹ�壹せ繝槭�縺ｯ5莉ｶ縺ｾ縺ｧ */
   .news-item:nth-child(n+6) {
     display: none;
   }
@@ -1556,7 +1553,7 @@ h6 {
     white-space: normal;
   }
 
-  /* 共通の横揺れ防止 */
+  /* 蜈ｱ騾壹�讓ｪ謠ｺ繧碁亟豁｢ */
   html, body {
     overflow-x: hidden;
     width: 100%;
@@ -1573,42 +1570,42 @@ h6 {
     box-sizing: border-box;
   }
 
-  /* ====== チケットページ専用：スマートフォンでの読みやすさ調整 ====== */
+  /* ====== 繝√こ繝�ヨ繝壹�繧ｸ蟆ら畑�壹せ繝槭�繝医ヵ繧ｩ繝ｳ縺ｧ縺ｮ隱ｭ縺ｿ繧�☆縺戊ｪｿ謨ｴ ====== */
   .page-ticket .step-body,
   .page-ticket .notice-wrap ul li {
     word-break: normal;
     overflow-wrap: anywhere;
-    line-height: 1.9 !important; /* 明確に行間を広げる */
+    line-height: 1.9 !important; /* 譏守｢ｺ縺ｫ陦碁俣繧貞ｺ�￡繧� */
   }
 
   .page-ticket .step-body p,
   .page-ticket .step-body ul,
   .page-ticket .notice-wrap ul li {
-    margin-bottom: 1.5rem !important; /* 段落間の余白を拡大 */
+    margin-bottom: 1.5rem !important; /* 谿ｵ關ｽ髢薙�菴咏區繧呈僑螟ｧ */
   }
 
-  /* 不要な改行タグを調整 */
+  /* 荳崎ｦ√↑謾ｹ陦後ち繧ｰ繧定ｪｿ謨ｴ */
   .page-ticket .step-body br {
     display: none;
   }
 
-  /* STEPカードの余白調整 */
+  /* STEP繧ｫ繝ｼ繝峨�菴咏區隱ｿ謨ｴ */
   .page-ticket .step-card {
     padding: 1.8rem 1.4rem;
-    margin-bottom: 2.5rem !important; /* 各STEPの区切りを明確に */
+    margin-bottom: 2.5rem !important; /* 蜷ТTEP縺ｮ蛹ｺ蛻�ｊ繧呈�遒ｺ縺ｫ */
     background: #fdf8f2;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     border-left: 5px solid var(--color-primary);
   }
 
-  /* STEPラベル：上下に1行分の余白 */
+  /* STEP繝ｩ繝吶Ν�壻ｸ贋ｸ九↓1陦悟�縺ｮ菴咏區 */
   .page-ticket .step-label {
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--color-primary-dark);
     margin-top: 0.5rem;
-    margin-bottom: 1.5rem !important; /* ラベル下の余白 */
+    margin-bottom: 1.5rem !important; /* 繝ｩ繝吶Ν荳九�菴咏區 */
     display: block;
     letter-spacing: 0.15em;
   }
@@ -1616,14 +1613,14 @@ h6 {
   .page-ticket .step-heading {
     font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 1.2rem !important; /* 本文との間隔 */
+    margin-bottom: 1.2rem !important; /* 譛ｬ譁�→縺ｮ髢馴囈 */
     line-height: 1.5;
   }
 
-  /* 注意書き：見出し化と余白調整 */
+  /* 豕ｨ諢乗嶌縺搾ｼ夊ｦ句�縺怜喧縺ｨ菴咏區隱ｿ謨ｴ */
   .page-ticket .notice-wrap {
     padding: 1.8rem 1.4rem;
-    margin-top: 3rem !important; /* 前の要素との区切り */
+    margin-top: 3rem !important; /* 蜑阪�隕∫ｴ�縺ｨ縺ｮ蛹ｺ蛻�ｊ */
     background: #fdf8f2;
     border-left: 5px solid var(--color-accent);
     border-radius: 12px;
@@ -1673,7 +1670,7 @@ h6 {
     border-bottom: 3px solid var(--color-primary);
 }
 
-/* 画像ラチE��ー */
+/* 逕ｻ蜒上Λ繝・ヱ繝ｼ */
 .ticket-img-wrap {
     text-align: center;
     margin-bottom: 2.5rem;
@@ -1687,7 +1684,7 @@ h6 {
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
 }
 
-/* STEPカーチE*/
+/* STEP繧ｫ繝ｼ繝・*/
 .step-list {
     display: flex;
     flex-direction: column;
@@ -1738,13 +1735,13 @@ h6 {
 }
 
 .step-body ul li::before {
-    content: "・";
+    content: "繝ｻ";
     position: absolute;
     left: 0;
     color: var(--color-primary-dark);
 }
 
-/* 注意事頁E�EチE��ス */
+/* 豕ｨ諢丈ｺ矩�・・繝・け繧ｹ */
 .notice-wrap {
     background: #f5f0e8;
     border-radius: 12px;
@@ -1777,14 +1774,14 @@ h6 {
 }
 
 .notice-wrap ul li::before {
-    content: "※";
+    content: "窶ｻ";
     position: absolute;
     left: 0;
     color: var(--color-accent);
     font-size: 0.85rem;
 }
 
-/* ====== スマ�Eトフォン向け調整 ====== */
+/* ====== 繧ｹ繝槭・繝医ヵ繧ｩ繝ｳ蜷代￠隱ｿ謨ｴ ====== */
 @media (max-width: 768px) {
     .ticket-section {
         padding: 2rem 0 3rem;
@@ -1795,52 +1792,52 @@ h6 {
         margin-bottom: 1.5rem;
     }
 
-    /* 斁E��の読みめE��さ改喁E*/
+    /* 譁・擇縺ｮ隱ｭ縺ｿ繧・☆縺墓隼蝟・*/
     .step-body,
     .notice-wrap ul li {
         word-break: normal;
         overflow-wrap: anywhere;
-        line-height: 1.85; /* 少し庁E��に調整 */
+        line-height: 1.85; /* 蟆代＠蠎・ａ縺ｫ隱ｿ謨ｴ */
     }
 
     .step-body p,
     .step-body ul,
     .notice-wrap ul li {
-        margin-bottom: 1.25rem; /* 段落間�E余白を拡大 */
+        margin-bottom: 1.25rem; /* 谿ｵ關ｽ髢薙・菴咏區繧呈僑螟ｧ */
     }
 
-    /* 不要な改行タグを調整 */
+    /* 荳崎ｦ√↑謾ｹ陦後ち繧ｰ繧定ｪｿ謨ｴ */
     .step-body br {
         display: none;
     }
 
-    /* STEPカード�E全体余白 */
+    /* STEP繧ｫ繝ｼ繝峨・蜈ｨ菴謎ｽ咏區 */
     .step-card {
-        padding: 1.5rem 1.2rem 0.5rem; /* 下部の冁E�E余白を調整 */
-        margin-bottom: 2rem; /* STEP間�E余白を確俁E*/
+        padding: 1.5rem 1.2rem 0.5rem; /* 荳矩Κ縺ｮ蜀・・菴咏區繧定ｪｿ謨ｴ */
+        margin-bottom: 2rem; /* STEP髢薙・菴咏區繧堤｢ｺ菫・*/
     }
 
-    /* STEPラベルを独立した見�Eしとして表示�E�上丁E行�Eの余白�E�E*/
+    /* STEP繝ｩ繝吶Ν繧堤峡遶九＠縺溯ｦ句・縺励→縺励※陦ｨ遉ｺ・井ｸ贋ｸ・陦悟・縺ｮ菴咏區・・*/
     .step-label {
         font-size: 0.8rem;
         margin-top: 0.5rem;
-        margin-bottom: 1.5rem; /* 下に1行�Eの余白 */
+        margin-bottom: 1.5rem; /* 荳九↓1陦悟・縺ｮ菴咏區 */
         display: block;
         letter-spacing: 0.15em;
     }
 
-    /* 見た目上�E「STEP行�E上�E余白」�E、直前�E要素との間隔�E�カード�EpaddingめEargin�E�で調整 */
+    /* 隕九◆逶ｮ荳翫・縲郡TEP陦後・荳翫・菴咏區縲阪・縲∫峩蜑阪・隕∫ｴ�縺ｨ縺ｮ髢馴囈・医き繝ｼ繝峨・padding繧・argin・峨〒隱ｿ謨ｴ */
 
     .step-heading {
         font-size: 1.15rem;
-        margin-bottom: 1.2rem; /* 本斁E��の間隔を確俁E*/
+        margin-bottom: 1.2rem; /* 譛ｬ譁・→縺ｮ髢馴囈繧堤｢ｺ菫・*/
         line-height: 1.5;
     }
 
-    /* 注意書き�E調整 */
+    /* 豕ｨ諢乗嶌縺阪・隱ｿ謨ｴ */
     .notice-wrap {
         padding: 1.5rem 1.2rem;
-        margin-top: 2.5rem; /* 前�E要素との区刁E��を強ぁE*/
+        margin-top: 2.5rem; /* 蜑阪・隕∫ｴ�縺ｨ縺ｮ蛹ｺ蛻・ｊ繧貞ｼｷ縺・*/
     }
 
     .notice-wrap-title {
@@ -1855,4 +1852,29 @@ h6 {
         margin-bottom: 0.8rem;
         padding-left: 1.5em;
     }
+}
+
+/* =========================================================
+   修正: PCブラウザ版トップ画像のhover拡大を完全に防止
+   親要素のhoverや予期せぬ継承によるズーム演出を強制リセット
+========================================================= */
+@media (min-width: 769px) {
+  /* 画像要素自身のhover時拡大・位置ズレを無効化 */
+  .hero-logo-img:hover,
+  .hero:hover .hero-logo-img {
+    transform: none !important;
+    zoom: 1 !important;
+    max-height: 200px !important;
+    width: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* 親要素(overflow:hidden等)に起因する背景ズーム演出の無効化 */
+  .hero:hover, 
+  .hero-slideshow:hover, 
+  .hero:hover .slide, 
+  .hero:hover .hero-slideshow {
+    transform: none !important;
+    zoom: 1 !important;
+  }
 }
