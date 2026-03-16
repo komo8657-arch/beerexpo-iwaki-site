@@ -62,3 +62,16 @@
     font-size: 0.95rem;
   }
 }
+
+/* =========================================================
+   Hero Section Date Format Adjustment
+========================================================= */
+.hero-info-block .hero-date {
+  white-space: nowrap; /* 折返しを防止 */
+}
+
+@media (max-width: 480px) {
+  .hero-info-block .hero-date {
+    font-size: 0.95em !important; /* モバイルで収まるようにサイズを微調整 */
+  }
+}
