@@ -90,3 +90,18 @@
     font-size: 1.15rem !important;
   }
 }
+
+/* =========================================================
+   Hero Buttons Layout Adjustment
+========================================================= */
+.hero-buttons {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 20px !important;
+}
+
+.hero-buttons a {
+  width: 100% !important;
+  max-width: 320px !important;
+}
