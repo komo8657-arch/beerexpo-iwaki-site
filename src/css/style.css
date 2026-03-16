@@ -75,3 +75,18 @@
     font-size: 0.95em !important; /* モバイルで収まるようにサイズを微調整 */
   }
 }
+
+/* =========================================================
+   Hero Catchphrase Readability Improvement
+========================================================= */
+.hero-catchphrase {
+  font-size: 1.2rem !important;
+  line-height: 1.5 !important;
+  text-align: center !important;
+}
+
+@media (max-width: 480px) {
+  .hero-catchphrase {
+    font-size: 1.15rem !important;
+  }
+}
