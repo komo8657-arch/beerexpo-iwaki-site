@@ -105,3 +105,10 @@
   width: 100% !important;
   max-width: 320px !important;
 }
+
+/* =========================================================
+   Event Information Card Layout Adjustment
+========================================================= */
+.info-box .info-item .info-value {
+  white-space: nowrap; /* 開催日程などの折返しを防止 */
+}
