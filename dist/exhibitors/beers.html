@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ビア博いわきのその他ドリンク出店情報">
-    <title>その他ドリンク | ビア博いわき 2026</title>
+    <meta name="description" content="ビア博いわき ブルワリー一覧">
+    <title>ブルワリー一覧 | ビア博いわき</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,7 +16,6 @@
 </head>
 
 <body>
-    <!-- ヘッダー -->
     <header class="header">
         <div class="header-inner">
             <a href="/" class="logo"><span class="logo-text">🍺 ビア博いわき</span></a>
@@ -43,10 +42,9 @@
                     <li class="nav-item has-dropdown">
                         <a href="/exhibitors/" class="nav-link">出店情報</a>
                         <ul class="dropdown">
-                            <li><a href="/exhibitors/" class="dropdown-link">出店情報トップ</a></li>
-                            <li><a href="/exhibitors/shops.html" class="dropdown-link">ショップ一覧</a></li>
-                            <li><a href="/exhibitors/beers.html" class="dropdown-link">ビール一覧</a></li>
-                            <li><a href="/exhibitors/foods.html" class="dropdown-link">フード一覧</a></li>
+                            <li><a href="/exhibitors/beers.html" class="dropdown-link">ブルワリー</a></li>
+                            <li><a href="/exhibitors/foods.html" class="dropdown-link">フード</a></li>
+                            <li><a href="/exhibitors/drinks.html" class="dropdown-link">その他ドリンク</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a href="/gallery/" class="nav-link">ギャラリー</a></li>
@@ -56,36 +54,36 @@
         </div>
     </header>
 
-    <!-- メイン -->
     <main class="main">
-
         <div class="page-header">
             <div class="container">
-                <h1 class="page-title">ドリンク</h1>
-                <p class="page-subtitle">その他ドリンク出店情報</p>
+                <h1 class="page-title">ブルワリー一覧</h1>
+                <p class="page-subtitle">出店ブルワリー紹介</p>
             </div>
         </div>
         <div class="container">
             <nav class="breadcrumb">
                 <a href="/">ホーム</a><span class="breadcrumb-separator">›</span>
                 <a href="/exhibitors/">出店情報</a><span class="breadcrumb-separator">›</span>
-                <span>ドリンク</span>
+                <span>ブルワリー一覧</span>
             </nav>
         </div>
         <section class="section">
             <div class="container">
                 <div style="text-align: center; padding: var(--spacing-xl) 0;">
+                    <p style="font-size: 2.5rem; margin-bottom: 0.5rem;">🍺</p>
                     <p
                         style="font-size: 1.5rem; font-weight: 700; color: var(--color-secondary); margin-bottom: 0.75rem;">
                         近日公開</p>
                     <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.8;">
-                        出店情報は現在調整中です。<br>確定次第更新します。</p>
+                        出店ブルワリーは現在調整中です。<br>
+                        確定次第、県別にご紹介いたします。
+                    </p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- フッター -->
             <footer class="footer">
         <div class="container">
             <div class="footer-inner">
@@ -115,7 +113,9 @@
             </div>
         </div>
     </footer>
-
+    <div class="modal">
+        <div class="modal-content"><button class="modal-close">×</button><img src="" alt=""></div>
+    </div>
 </body>
 
 </html>
