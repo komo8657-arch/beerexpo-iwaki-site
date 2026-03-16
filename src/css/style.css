@@ -11,13 +11,18 @@
   max-height: 200px !important;
   width: auto !important;
   margin: 0 auto !important;
-  transform: scale(1.1);
+  transform: scale(1.2);
   transform-origin: center;
 }
 @media (max-width: 768px) {
   .hero-logo-img {
     max-height: 100px !important;
     max-width: 80% !important;
+  }
+}
+@media (max-width: 480px) {
+  .hero-logo-img {
+    transform: scale(1.15);
   }
 }
 
