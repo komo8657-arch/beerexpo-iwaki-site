@@ -19,3 +19,46 @@
   }
 }
 
+
+/* =========================================================
+   Hero Section Readability Improvement
+========================================================= */
+.hero-info-block {
+  background: rgba(0, 0, 0, 0.22);
+  color: #ffffff !important;
+  border-radius: 12px;
+  padding: 10px 16px;
+  display: inline-block;
+  margin-bottom: var(--spacing-lg);
+}
+
+.hero-info-block .hero-date {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff !important;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+  text-shadow: none !important;
+}
+
+.hero-info-block .hero-venue {
+  font-size: 1.1rem;
+  color: #ffffff !important;
+  margin-bottom: 0;
+  font-weight: 600;
+  text-shadow: none !important;
+}
+
+@media (max-width: 768px) {
+  .hero-info-block {
+    margin-bottom: 1.5rem;
+    padding: 8px 12px;
+  }
+  .hero-info-block .hero-date {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+  .hero-info-block .hero-venue {
+    font-size: 0.95rem;
+  }
+}
