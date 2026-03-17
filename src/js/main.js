@@ -122,6 +122,7 @@ function initNav() {
         <li class="nav-item only-sp"><a href="/exhibitors/" class="nav-link">出店情報</a></li>
         <li class="nav-item only-sp"><a href="/access/" class="nav-link">アクセス</a></li>
         <li class="nav-item only-sp"><a href="/news/" class="nav-link">ニュース</a></li>
+        <li class="nav-item only-sp"><a href="/guide/faq.html" class="nav-link">よくある質問</a></li>
         <li class="nav-item only-sp"><a href="/contact/" class="nav-link">お問い合わせ</a></li>
 
     `;
