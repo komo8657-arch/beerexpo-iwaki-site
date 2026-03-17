@@ -128,7 +128,53 @@
 @media (min-width: 769px) {
   .hero-logo-img:hover,
   .hero:hover .hero-logo-img {
-    transform: scale(1.2) !important;
   }
+}
+
+/* =========================================================
+   FAQ Layout Improvement (Safe Mode - Appended)
+   Targets only the FAQ page content based on its unique structure
+   Does NOT modify any HTML or existing classes
+========================================================= */
+
+/* Center FAQ cards on desktop */
+.section .card {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Adjust padding for div inside card (acts as card-body) */
+.section .card > div:not(.section-title) {
+    padding: 20px 24px;
+}
+
+/* Typography adjustments for FAQ text */
+.section .card p {
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.section .card p strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+    .section .card {
+        max-width: 100%;
+        margin-left: initial;
+        margin-right: initial;
+    }
+
+    .section .card > div:not(.section-title) {
+        padding: 16px;
+    }
+
+    .section .card p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
 }
 
