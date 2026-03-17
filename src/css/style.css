@@ -178,3 +178,14 @@
     }
 }
 
+/* =========================================================
+   Fix: Final override to ensure logo scale is maintained
+========================================================= */
+@media (min-width: 769px) {
+.hero-logo-img,
+.hero-logo-img:hover,
+.hero:hover .hero-logo-img {
+transform: scale(1.2) !important;
+}
+}
+
