@@ -119,3 +119,16 @@
 .info-box .info-item .info-value {
   white-space: nowrap; /* 開催日程などの折返しを防止 */
 }
+
+/* =========================================================
+   Fix: Restore scale(1.2) on hover — override the old transform:none rule
+   (The original reset block in the minified CSS blob used transform:none !important
+    which canceled the intended scale. This rule re-applies scale(1.2) after it.)
+========================================================= */
+@media (min-width: 769px) {
+  .hero-logo-img:hover,
+  .hero:hover .hero-logo-img {
+    transform: scale(1.2) !important;
+  }
+}
+
