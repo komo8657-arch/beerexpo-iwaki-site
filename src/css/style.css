@@ -189,3 +189,29 @@ transform: scale(1.2) !important;
 }
 }
 
+/* =========================================================
+   Safari-only layout stabilization for the homepage guide alert
+   Scope: only the red toilet notice box in index.html
+========================================================= */
+.guide-alert-item {
+  margin-bottom: 0.75rem;
+}
+
+.guide-alert-box {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  color: #dc2626;
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  line-height: 1.7;
+
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
