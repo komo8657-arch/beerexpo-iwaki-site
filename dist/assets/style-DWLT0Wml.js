@@ -47,6 +47,7 @@
         <li class="nav-item only-sp"><a href="/exhibitors/" class="nav-link">出店情報</a></li>
         <li class="nav-item only-sp"><a href="/access/" class="nav-link">アクセス</a></li>
         <li class="nav-item only-sp"><a href="/news/" class="nav-link">ニュース</a></li>
+        <li class="nav-item only-sp"><a href="/guide/faq.html" class="nav-link">よくある質問</a></li>
         <li class="nav-item only-sp"><a href="/contact/" class="nav-link">お問い合わせ</a></li>
 
     `)}function w(){window.location.pathname==="/"||window.location.pathname.endsWith("/index.html")||window.location.pathname.endsWith("/"),document.querySelectorAll(".logo").forEach(n=>{n.innerHTML='<img src="/assets/img/logo3.png" alt="ビア博いわき" class="logo-img">'})}function h(){const n="https://www.facebook.com/share/1Dox9zMMon/",a="https://www.instagram.com/beer_expo_iwaki?igsh=a3d5M3U2endramh2",t=document.querySelector(".nav-list");if(t&&!t.querySelector(".nav-sns")){const e=document.createElement("li");e.className="nav-item nav-sns",e.innerHTML=`
