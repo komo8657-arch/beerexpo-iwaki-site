@@ -188,6 +188,8 @@ function initSNS() {
 
 /**
  * ハンバーガーメニュー（モバイル）
+ * 責務: ハンバーガーボタンによるメニュー全体の開閉のみ。
+ * リンク遷移の制御は initDropdowns() に一任する。
  */
 function initHamburgerMenu() {
     const hamburger = document.querySelector('.hamburger');
@@ -204,30 +206,18 @@ function initHamburgerMenu() {
         document.body.style.overflow = isActive ? '' : 'hidden';
     });
 
-    // イベント委任でnavListのすべてのリンクを処理（ticketリンク含む）
+    // navList内リンクのクリックでメニューを閉じる（リンク遷移はブラウザ標準動作に任せる）
     navList.addEventListener('click', (e) => {
+        // initDropdowns() 等の他ハンドラが preventDefault 済みの場合は何もしない
+        if (e.defaultPrevented) return;
+
         const link = e.target.closest('a');
         if (!link) return;
 
-        // ドロップダウン親リンク（has-dropdown の nav-link）の制御
-        const parentLi = link.closest('.nav-item.has-dropdown');
-        if (parentLi && link.classList.contains('nav-link')) {
-            // モバイル時、アコーディオンが閉じていたら（開く動作なので）メニューは閉じずにリターン
-            if (window.innerWidth <= 768 && !parentLi.classList.contains('active')) {
-                return;
-            }
-        }
-
-        // iPhoneのSafari等での遷移不具合回避
+        // 通常リンクのクリック時にメニュー全体を閉じる（遷移自体はブラウザに任せる）
         hamburger.classList.remove('active');
         navList.classList.remove('active');
         document.body.style.overflow = '';
-        
-        // メニューが閉じるアニメーションを待たずに即座に遷移を試みる
-        // もしhrefが空でなければ遷移
-        if (link.href && !link.href.includes('#')) {
-            window.location.href = link.href;
-        }
     });
 
     // メニュー外クリックで閉じる
@@ -245,12 +235,16 @@ function initHamburgerMenu() {
 
 /**
  * ドロップダウンナビ（二層対応）
- * タッチデバイス（スマホのPC表示含む）も正しく動作するようhover検知を追加
+ * 責務: サブメニューを持つ親リンクのクリック制御のみ。
+ * - タッチデバイス判定は isTouchDevice() に統一（window.innerWidth は使用しない）
+ * - 1回目クリック: preventDefault + stopPropagation でサブメニューのみ開く
+ * - 2回目クリック: ブラウザ標準のリンク遷移に任せる
  */
 function initDropdowns() {
     const dropdownItems = document.querySelectorAll('.nav-item.has-dropdown');
 
     // タッチデバイス判定（スマホのPC表示モードでも検知）
+    // window.innerWidth との混在を禁止し、この関数のみで判定する
     const isTouchDevice = () =>
         window.matchMedia('(hover: none)').matches ||
         'ontouchstart' in window ||
@@ -260,19 +254,21 @@ function initDropdowns() {
         const link = item.querySelector('.nav-link');
 
         link.addEventListener('click', (e) => {
-            // モバイル幅 OR タッチデバイスの場合はドロップダウン展開
-            if (window.innerWidth <= 768 || isTouchDevice()) {
-                // まだ開いていない場合はデフォルト動作をキャンセルし、開く
-                if (!item.classList.contains('active')) {
-                    e.preventDefault();
-                    item.classList.add('active');
-                    // 他のドロップダウンを閉じる
-                    dropdownItems.forEach(other => {
-                        if (other !== item) other.classList.remove('active');
-                    });
-                }
-                // すでに開いている場合はそのままページ遷移させる
+            // タッチデバイス（スマホのPC表示含む）のみ制御する
+            if (!isTouchDevice()) return;
+
+            if (!item.classList.contains('active')) {
+                // 1回目クリック: サブメニューを開くだけ。ページ遷移させない
+                e.preventDefault();
+                e.stopPropagation(); // initHamburgerMenu() 側へのバブリングも防ぐ
+                item.classList.add('active');
+                // 他のドロップダウンを閉じる
+                dropdownItems.forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
             }
+            // 2回目クリック（すでに active の時）:
+            // preventDefault も stopPropagation もしないため、ブラウザ標準のリンク遷移が発生する
         });
     });
 
@@ -283,9 +279,9 @@ function initDropdowns() {
         }
     });
 
-    // リサイズ時にモバイルドロップダウン状態をリセット
+    // リサイズ時にドロップダウン状態をリセット（タッチデバイスでなくなった場合）
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 768 && !isTouchDevice()) {
+        if (!isTouchDevice()) {
             dropdownItems.forEach(item => item.classList.remove('active'));
         }
     });
