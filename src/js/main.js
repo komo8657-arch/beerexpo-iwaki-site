@@ -494,13 +494,18 @@ async function loadNewsList() {
             return new Date(b.date) - new Date(a.date);
         });
 
-        listContainer.innerHTML = sortedNews.map(item => `
-            <a href="/news/?slug=${item.slug}" class="news-item ${item.pinned ? 'pinned' : ''}">
-                <span class="news-date">${formatDate(item.date)}</span>
-                <span class="news-category cat-${item.category}">${getCategoryLabel(item.category)}</span>
-                <span class="news-item-title">${item.title}</span>
-            </a>
-        `).join('');
+        listContainer.innerHTML = sortedNews.map(item => {
+            const isTarget = item.date === '2026-04-04';
+            const newsItemHtml = `
+                <a href="/news/?slug=${item.slug}" class="news-item ${item.pinned ? 'pinned' : ''}" ${isTarget ? 'style="border-bottom: none; padding-bottom: 0.5rem;"' : ''}>
+                    <span class="news-date">${formatDate(item.date)}</span>
+                    <span class="news-category cat-${item.category}">${getCategoryLabel(item.category)}</span>
+                    <span class="news-item-title">${item.title}</span>
+                </a>
+                ${isTarget ? `<div class="news-content-inline" style="padding: 0 var(--spacing-md) 1rem 110px; border-bottom: 1px solid var(--color-border);">${item.content}</div>` : ''}
+            `;
+            return isTarget ? `<div class="news-item-wrapper">${newsItemHtml}</div>` : newsItemHtml;
+        }).join('');
     }
 }
 

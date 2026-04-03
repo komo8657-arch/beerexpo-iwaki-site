@@ -1,26 +1,26 @@
 [
-    {
-        "slug": "2026-main-visual-release",
-        "date": "2026-04-04",
-        "category": "info",
-        "title": "今年のメインビジュアル公開！",
-        "pinned": true,
-        "content": "<p>今年のメインビジュアルを公開しました。</p>"
-    },
-    {
-        "slug": "2026-hp-open-iwaki",
-        "date": "2026-03-13",
-        "category": "info",
-        "title": "ビア博いわきホームページ開設しました。",
-        "pinned": false,
-        "content": "<p>ビア博いわきホームページを開設しました。</p>"
-    },
-    {
-        "slug": "2026-sandi-brewery-collab",
-        "date": "2026-03-08",
-        "category": "info",
-        "title": "ビア博いわき×SANDi BREWERYオリジナルビール製造開始！詳細はSNSにて確認",
-        "pinned": false,
-        "content": "<p>ビア博いわき×SANDi BREWERYのオリジナルビール製造を開始しました。詳細はSNSにてご確認ください。</p>"
-    }
+  {
+    "slug": "2026-main-visual-release",
+    "date": "2026-04-04",
+    "category": "info",
+    "title": "＊今年のメインビジュアル公開！",
+    "pinned": true,
+    "content": "<p>今年のメインビジュアルを公開しました。</p><p><a href='/assets/img/beerexpo2026-poster.webp' target='_blank' rel='noopener noreferrer'>ポスター画像を見る</a></p>"
+  },
+  {
+    "slug": "2026-hp-open-iwaki",
+    "date": "2026-03-13",
+    "category": "info",
+    "title": "ビア博いわきホームページ開設しました。",
+    "pinned": false,
+    "content": "<p>ビア博いわきホームページを開設しました。</p>"
+  },
+  {
+    "slug": "2026-sandi-brewery-collab",
+    "date": "2026-03-08",
+    "category": "info",
+    "title": "ビア博いわき×SANDi BREWERYオリジナルビール製造開始！詳細はSNSにて確認",
+    "pinned": false,
+    "content": "<p>ビア博いわき×SANDi BREWERYのオリジナルビール製造を開始しました。詳細はSNSにてご確認ください。</p>"
+  }
 ]
