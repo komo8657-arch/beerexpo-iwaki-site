@@ -215,3 +215,79 @@ transform: scale(1.2) !important;
   word-break: normal;
   overflow-wrap: break-word;
 }
+
+/* =========================================================
+   Exhibitors Table Styling
+========================================================= */
+.exhibitors-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.exhibitors-table th,
+.exhibitors-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.exhibitors-table th {
+  font-weight: bold;
+  color: #555;
+}
+
+.exhibitors-table tr:hover {
+  background: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+  .exhibitors-table {
+    font-size: 12px;
+  }
+
+  .shop-name {
+    font-size: 15px;
+  }
+}
+
+.shop-name {
+  font-size: 1.05em;
+  font-weight: 600;
+}
+
+/* =========================================================
+   Exhibitors Table - Visual Refinement
+========================================================= */
+
+/* ① h3 sub-heading differentiation */
+h3.section-title {
+  font-size: 1.2em;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+h3.section-title::after {
+  width: 40px;
+  height: 3px;
+}
+
+/* ② Section spacing between tables */
+.exhibitors-table {
+  margin-bottom: 40px;
+}
+
+/* ③ Date column center alignment */
+.exhibitors-table th:nth-child(2),
+.exhibitors-table td:nth-child(2) {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ⑤ Row height balance */
+.exhibitors-table th,
+.exhibitors-table td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
