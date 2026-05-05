@@ -495,7 +495,7 @@ async function loadNewsList() {
         });
 
         listContainer.innerHTML = sortedNews.map(item => {
-            const isTarget = item.date === '2026-04-04';
+            const isTarget = item.pinned === true;
             const newsItemHtml = `
                 <a href="/news/?slug=${item.slug}" class="news-item ${item.pinned ? 'pinned' : ''}" ${isTarget ? 'style="border-bottom: none; padding-bottom: 0.5rem;"' : ''}>
                     <span class="news-date">${formatDate(item.date)}</span>
