@@ -8,6 +8,14 @@
     "content": "<p>ビア博いわき2026のブルワリー第一弾を公開しました。</p><p><a href='/exhibitors/beers.html'>ブルワリー一覧を見る</a></p>"
   },
   {
+    "slug": "2026-drink-menu-open",
+    "date": "2026-05-08",
+    "category": "info",
+    "title": "ドリンクメニューを公開しました！",
+    "pinned": true,
+    "content": "<p>ビア博いわき2026のレギュラードリンクメニューを公開しました。</p><p>ビール、サワー、ハイボール、チューハイ、ノンアルコールなどをご確認いただけます。</p><p><a href='/exhibitors/drinks.html'>ドリンクメニューを見る</a></p>"
+  },
+  {
     "slug": "2026-food-exhibitor-info-open",
     "date": "2026-05-04",
     "category": "info",

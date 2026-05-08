@@ -291,3 +291,42 @@ h3.section-title::after {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+/* === ドリンクメニュー一覧 === */
+.menu-list {
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+
+.menu-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.menu-name {
+  font-weight: 500;
+}
+
+.menu-price {
+  min-width: 64px;
+  text-align: right;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .menu-list {
+    max-width: 100%;
+  }
+
+  .menu-row {
+    gap: 16px;
+  }
+
+  .menu-price {
+    min-width: 52px;
+  }
+}
