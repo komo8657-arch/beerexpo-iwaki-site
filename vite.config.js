@@ -38,6 +38,7 @@ export default defineConfig({
         'exhibitors/beers': resolve(__dirname, 'exhibitors/beers.html'),
         'exhibitors/foods': resolve(__dirname, 'exhibitors/foods.html'),
         'exhibitors/drinks': resolve(__dirname, 'exhibitors/drinks.html'),
+        'exhibitors/breweries': resolve(__dirname, 'exhibitors/breweries.html'),
         shops: resolve(__dirname, 'shops.html'),
         news: resolve(__dirname, 'news/index.html'),
         newsDetail: resolve(__dirname, 'news/detail.html'),
