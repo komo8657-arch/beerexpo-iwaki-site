@@ -1,1 +1,66 @@
-[     {         "slug": "2026-homepage-launch",         "date": "2026-03-13",         "category": "info",         "title": "ビア博いわき 公式ホームページを開設しました",         "pinned": true,         "content": "<p>ビア博いわきの公式ホームページを開設いたしました。</p><p>出店情報や会場マップ、各種お知らせなど、最新情報を随時発信してまいります。皆様のご来場を心よりお待ちしております！</p>"     },     {         "slug": "2026-date-announce",         "date": "2026-02-28",         "category": "event",         "title": "【開催決定】ビア博いわき2026は5月開催！",         "pinned": false,         "content": "<p>ビア博いわき2026の開催が正式に決定しました。</p><h3>開催概要</h3><ul><li>日程：2026年5月2日（土）・3日（日）・4日（月・祝）</li><li>会場：平中央公園（福島県いわき市平三崎1）</li><li>時間：Day1-2 11:00〜20:00 / Day3 11:00〜18:00</li></ul><p>皆様のお越しをお待ちしております！</p>"     } ]
+[
+  {
+    "slug": "2026-brewery-third-lineup",
+    "date": "2026-05-09",
+    "category": "info",
+    "title": "ブルワリー第三弾を発表しました！",
+    "pinned": true,
+    "content": "<p>福島県内の提供ブルワリーを公開しました。</p><p><a href='/exhibitors/breweries.html'>ブルワリー一覧を見る</a></p>"
+  },
+  {
+    "slug": "2026-brewery-lineup-4to8",
+    "date": "2026-05-09",
+    "category": "info",
+    "title": "ブルワリー第二弾を発表しました！",
+    "pinned": true,
+    "content": "<p>山梨・長野から九州・沖縄まで、全国各地の提供ブルワリーを公開しました。</p><p><a href='/exhibitors/breweries.html'>ブルワリー一覧を見る</a></p>"
+  },
+  {
+    "slug": "2026-brewery-first-lineup",
+    "date": "2026-05-08",
+    "category": "info",
+    "title": "＊ブルワリー第一弾を発表しました！",
+    "pinned": true,
+    "content": "<p>ビア博いわき2026のブルワリー第一弾を公開しました。</p><p><a href='/exhibitors/beers.html'>ブルワリー一覧を見る</a></p>"
+  },
+  {
+    "slug": "2026-drink-menu-open",
+    "date": "2026-05-08",
+    "category": "info",
+    "title": "ドリンクメニューを公開しました！",
+    "pinned": true,
+    "content": "<p>ビア博いわき2026のレギュラードリンクメニューを公開しました。</p><p>ビール、サワー、ハイボール、チューハイ、ノンアルコールなどをご確認いただけます。</p><p><a href='/exhibitors/drinks.html'>ドリンクメニューを見る</a></p>"
+  },
+  {
+    "slug": "2026-food-exhibitor-info-open",
+    "date": "2026-05-04",
+    "category": "info",
+    "title": "＊フード出店情報を公開しました！",
+    "pinned": true,
+    "content": "<p>ビア博いわき2026のフード出店情報を公開しました。</p><p><a href='/exhibitors/foods.html'>フード出店一覧を見る</a></p>"
+  },
+  {
+    "slug": "2026-main-visual-release",
+    "date": "2026-04-04",
+    "category": "info",
+    "title": "＊今年のメインビジュアル公開！",
+    "pinned": true,
+    "content": "<p>今年のメインビジュアルを公開しました。</p><p><a href='/assets/img/beerexpo2026-poster.webp?v=20260406' target='_blank' rel='noopener noreferrer'>ポスターを見る</a></p>"
+  },
+  {
+    "slug": "2026-hp-open-iwaki",
+    "date": "2026-03-13",
+    "category": "info",
+    "title": "ビア博いわきホームページ開設しました。",
+    "pinned": false,
+    "content": "<p>ビア博いわきホームページを開設しました。</p>"
+  },
+  {
+    "slug": "2026-sandi-brewery-collab",
+    "date": "2026-03-08",
+    "category": "info",
+    "title": "ビア博いわき×SANDi BREWERYオリジナルビール製造開始！詳細はSNSにて確認",
+    "pinned": false,
+    "content": "<p>ビア博いわき×SANDi BREWERYのオリジナルビール製造を開始しました。詳細はSNSにてご確認ください。</p>"
+  }
+]

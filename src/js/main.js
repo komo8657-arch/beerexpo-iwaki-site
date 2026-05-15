@@ -389,9 +389,8 @@ async function loadNewsData() {
             return new Date(b.date) - new Date(a.date);
         });
 
-        // PC: 8件、SP: 5件
-        const isMobile = window.innerWidth <= 768;
-        const displayCount = isMobile ? 5 : 8;
+        // 表示件数は最大5件
+        const displayCount = 5;
         const displayNews = sortedNews.slice(0, displayCount);
 
         newsList.innerHTML = displayNews.map(item => `

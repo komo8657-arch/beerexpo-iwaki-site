@@ -1,5 +1,13 @@
 [
   {
+    "slug": "2026-timetable-first",
+    "date": "2026-05-15",
+    "category": "info",
+    "title": "タイムテーブル第一弾を公開しました！",
+    "pinned": true,
+    "content": "<p>5月29日（金）のタイムテーブルを公開しました。</p><p><a href='/timetable/'>タイムテーブルを見る</a></p>"
+  },
+  {
     "slug": "2026-brewery-third-lineup",
     "date": "2026-05-09",
     "category": "info",
@@ -40,27 +48,27 @@
     "content": "<p>ビア博いわき2026のフード出店情報を公開しました。</p><p><a href='/exhibitors/foods.html'>フード出店一覧を見る</a></p>"
   },
   {
-        "slug": "2026-main-visual-release",
-        "date": "2026-04-04",
-        "category": "info",
-        "title": "＊今年のメインビジュアル公開！",
-        "pinned": true,
-        "content": "<p>今年のメインビジュアルを公開しました。</p><p><a href='/assets/img/beerexpo2026-poster.webp?v=20260406' target='_blank' rel='noopener noreferrer'>ポスターを見る</a></p>"
-    },
-    {
-        "slug": "2026-hp-open-iwaki",
-        "date": "2026-03-13",
-        "category": "info",
-        "title": "ビア博いわきホームページ開設しました。",
-        "pinned": false,
-        "content": "<p>ビア博いわきホームページを開設しました。</p>"
-    },
-    {
-        "slug": "2026-sandi-brewery-collab",
-        "date": "2026-03-08",
-        "category": "info",
-        "title": "ビア博いわき×SANDi BREWERYオリジナルビール製造開始！詳細はSNSにて確認",
-        "pinned": false,
-        "content": "<p>ビア博いわき×SANDi BREWERYのオリジナルビール製造を開始しました。詳細はSNSにてご確認ください。</p>"
-    }
+    "slug": "2026-main-visual-release",
+    "date": "2026-04-04",
+    "category": "info",
+    "title": "＊今年のメインビジュアル公開！",
+    "pinned": true,
+    "content": "<p>今年のメインビジュアルを公開しました。</p><p><a href='/assets/img/beerexpo2026-poster.webp?v=20260406' target='_blank' rel='noopener noreferrer'>ポスターを見る</a></p>"
+  },
+  {
+    "slug": "2026-hp-open-iwaki",
+    "date": "2026-03-13",
+    "category": "info",
+    "title": "ビア博いわきホームページ開設しました。",
+    "pinned": false,
+    "content": "<p>ビア博いわきホームページを開設しました。</p>"
+  },
+  {
+    "slug": "2026-sandi-brewery-collab",
+    "date": "2026-03-08",
+    "category": "info",
+    "title": "ビア博いわき×SANDi BREWERYオリジナルビール製造開始！詳細はSNSにて確認",
+    "pinned": false,
+    "content": "<p>ビア博いわき×SANDi BREWERYのオリジナルビール製造を開始しました。詳細はSNSにてご確認ください。</p>"
+  }
 ]
