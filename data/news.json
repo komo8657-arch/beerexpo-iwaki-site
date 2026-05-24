@@ -1,5 +1,13 @@
 [
   {
+    "slug": "2026-timetable-second",
+    "date": "2026-05-24",
+    "category": "info",
+    "title": "タイムテーブル第二弾を公開しました！",
+    "pinned": true,
+    "content": "<p>5月30日（土）のタイムテーブルを公開しました。</p><p><a href='/timetable/'>タイムテーブルを見る</a></p>"
+  },
+  {
     "slug": "2026-timetable-first",
     "date": "2026-05-15",
     "category": "info",
