@@ -4,3 +4,52 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/exhibitors/foods.html"
+  to = "/exhibitors/foods"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/exhibitors/drinks.html"
+  to = "/exhibitors/drinks"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/drinks"
+  to = "/exhibitors/drinks"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/drinks.html"
+  to = "/exhibitors/drinks"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/exhibitors/beers.html"
+  to = "/exhibitors/breweries"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about/outline.html"
+  to = "/about/outline"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/access/parking.html"
+  to = "/access/parking"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guide/faq.html"
+  to = "/guide/faq"
+  status = 301
+  force = true
+

@@ -80,7 +80,7 @@ function initNav() {
             <ul class="dropdown">
                 <li><a href="/about/" class="dropdown-link">ビア博いわきとは</a></li>
                 <li><a href="/guide/" class="dropdown-link">初めての方へ</a></li>
-                <li><a href="/about/outline.html" class="dropdown-link">開催概要</a></li>
+                <li><a href="/about/outline" class="dropdown-link">開催概要</a></li>
             </ul>
         </li>
         <li class="nav-item only-pc">
@@ -92,16 +92,16 @@ function initNav() {
         <li class="nav-item has-dropdown only-pc">
             <a href="/exhibitors/" class="nav-link">出店情報</a>
             <ul class="dropdown">
-                <li><a href="/exhibitors/beers.html" class="dropdown-link">ブルワリー</a></li>
-                <li><a href="/exhibitors/foods.html" class="dropdown-link">フード</a></li>
-                <li><a href="/exhibitors/drinks.html" class="dropdown-link">ドリンク</a></li>
+                <li><a href="/exhibitors/breweries" class="dropdown-link">ブルワリー</a></li>
+                <li><a href="/exhibitors/foods" class="dropdown-link">フード</a></li>
+                <li><a href="/exhibitors/drinks" class="dropdown-link">ドリンク</a></li>
             </ul>
         </li>
         <li class="nav-item has-dropdown only-pc">
             <a href="/access/" class="nav-link">アクセス</a>
             <ul class="dropdown">
                 <li><a href="/access/" class="dropdown-link">地図・アクセス方法</a></li>
-                <li><a href="/access/parking.html" class="dropdown-link">近隣の駐車場</a></li>
+                <li><a href="/access/parking" class="dropdown-link">近隣の駐車場</a></li>
             </ul>
         </li>
         <li class="nav-item only-pc">
@@ -111,18 +111,18 @@ function initNav() {
             <a href="/guide/" class="nav-link">ご利用ガイド</a>
             <ul class="dropdown">
                 <li><a href="/contact/" class="dropdown-link">お問い合わせ</a></li>
-                <li><a href="/guide/faq.html" class="dropdown-link">よくある質問</a></li>
+                <li><a href="/guide/faq" class="dropdown-link">よくある質問</a></li>
             </ul>
         </li>
 
         <!-- ================= スマホ用メニュー ================= -->
-        <li class="nav-item only-sp"><a href="/about/outline.html" class="nav-link">イベント概要</a></li>
+        <li class="nav-item only-sp"><a href="/about/outline" class="nav-link">イベント概要</a></li>
         <li class="nav-item only-sp"><a href="/ticket/" class="nav-link">チケットについて</a></li>
         <li class="nav-item only-sp"><a href="/timetable/" class="nav-link">タイムテーブル</a></li>
         <li class="nav-item only-sp"><a href="/exhibitors/" class="nav-link">出店情報</a></li>
         <li class="nav-item only-sp"><a href="/access/" class="nav-link">アクセス</a></li>
         <li class="nav-item only-sp"><a href="/news/" class="nav-link">ニュース</a></li>
-        <li class="nav-item only-sp"><a href="/guide/faq.html" class="nav-link">よくある質問</a></li>
+        <li class="nav-item only-sp"><a href="/guide/faq" class="nav-link">よくある質問</a></li>
         <li class="nav-item only-sp"><a href="/contact/" class="nav-link">お問い合わせ</a></li>
 
     `;
